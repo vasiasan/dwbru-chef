@@ -93,15 +93,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "15781",
-              "packets": "114",
+              "bytes": "766503",
+              "packets": "791",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "15781",
-              "packets": "114",
+              "bytes": "766503",
+              "packets": "791",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -111,16 +111,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "662854",
-              "packets": "4270",
+              "bytes": "7187448",
+              "packets": "28291",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "47266984",
-              "packets": "124965",
+              "bytes": "100402809",
+              "packets": "975751",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -246,13 +246,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "1765084",
-        "kb_available": "17679368",
+        "kb_used": "1884108",
+        "kb_available": "17560344",
         "percent_used": "10%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "106185",
-        "inodes_available": "1204535",
+        "inodes_used": "106148",
+        "inodes_available": "1204572",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -298,8 +298,8 @@
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "62728",
-        "inodes_used": "309",
-        "inodes_available": "62419",
+        "inodes_used": "310",
+        "inodes_available": "62418",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -383,26 +383,26 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "24096kB",
-      "buffers": "21692kB",
-      "cached": "322652kB",
-      "active": "199556kB",
-      "inactive": "219276kB",
-      "dirty": "20kB",
+      "free": "89704kB",
+      "buffers": "36360kB",
+      "cached": "247596kB",
+      "active": "223548kB",
+      "inactive": "135440kB",
+      "dirty": "56kB",
       "writeback": "0kB",
-      "anon_pages": "74492kB",
-      "mapped": "9656kB",
-      "slab": "49296kB",
-      "slab_reclaimable": "41404kB",
-      "slab_unreclaim": "7892kB",
-      "page_tables": "2136kB",
+      "anon_pages": "75052kB",
+      "mapped": "8960kB",
+      "slab": "43424kB",
+      "slab_reclaimable": "35876kB",
+      "slab_unreclaim": "7548kB",
+      "page_tables": "2152kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "140068kB",
+      "committed_as": "139780kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "3176kB",
-      "vmalloc_chunk": "34359728488kB"
+      "vmalloc_chunk": "34359728120kB"
     },
     "cpu": {
       "0": {
@@ -1134,12 +1134,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 23458,
-    "uptime": "6 hours 30 minutes 58 seconds",
-    "idletime_seconds": 23374,
-    "idletime": "6 hours 29 minutes 34 seconds",
+    "uptime_seconds": 184829,
+    "uptime": "2 days 03 hours 20 minutes 29 seconds",
+    "idletime_seconds": 184431,
+    "idletime": "2 days 03 hours 13 minutes 51 seconds",
     "root_group": "root",
-    "ohai_time": 1408437196.2402742,
+    "ohai_time": 1408598566.9240189,
     "block_device": {
       "sr0": {
         "size": "2097151",
@@ -1253,10 +1253,15 @@
       }
     },
     "recipes": [
-
+      "dwbru-host",
+      "dwbru-host::default",
+      "dwbru-host::nginx"
     ],
     "roles": [
 
     ]
-  }
+  },
+  "run_list": [
+    "recipe[dwbru-host]"
+  ]
 }
