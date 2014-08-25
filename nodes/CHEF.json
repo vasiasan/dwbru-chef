@@ -93,15 +93,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "766503",
-              "packets": "791",
+              "bytes": "4945491",
+              "packets": "4423",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "766503",
-              "packets": "791",
+              "bytes": "4945491",
+              "packets": "4423",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -111,16 +111,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "7187448",
-              "packets": "28291",
+              "bytes": "29054104",
+              "packets": "126131",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "100402809",
-              "packets": "975751",
+              "bytes": "220012622",
+              "packets": "2857038",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -246,13 +246,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "1884108",
-        "kb_available": "17560344",
+        "kb_used": "1893112",
+        "kb_available": "17551340",
         "percent_used": "10%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "106148",
-        "inodes_available": "1204572",
+        "inodes_used": "106228",
+        "inodes_available": "1204492",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -293,13 +293,13 @@
       },
       "tmpfs": {
         "kb_size": "50184",
-        "kb_used": "304",
-        "kb_available": "49880",
+        "kb_used": "312",
+        "kb_available": "49872",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "62728",
-        "inodes_used": "310",
-        "inodes_available": "62418",
+        "inodes_used": "311",
+        "inodes_available": "62417",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -383,26 +383,26 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "89704kB",
-      "buffers": "36360kB",
-      "cached": "247596kB",
-      "active": "223548kB",
-      "inactive": "135440kB",
-      "dirty": "56kB",
+      "free": "33236kB",
+      "buffers": "39584kB",
+      "cached": "294072kB",
+      "active": "267968kB",
+      "inactive": "143384kB",
+      "dirty": "52kB",
       "writeback": "0kB",
-      "anon_pages": "75052kB",
-      "mapped": "8960kB",
-      "slab": "43424kB",
-      "slab_reclaimable": "35876kB",
-      "slab_unreclaim": "7548kB",
-      "page_tables": "2152kB",
+      "anon_pages": "77700kB",
+      "mapped": "8996kB",
+      "slab": "47636kB",
+      "slab_reclaimable": "40016kB",
+      "slab_unreclaim": "7620kB",
+      "page_tables": "2164kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "139780kB",
+      "committed_as": "139836kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "3176kB",
-      "vmalloc_chunk": "34359728120kB"
+      "vmalloc_chunk": "34359726040kB"
     },
     "cpu": {
       "0": {
@@ -812,6 +812,13 @@
           "uid": 105,
           "shell": "/bin/false",
           "gecos": "colord colour management daemon,,,"
+        },
+        "vasia": {
+          "dir": "/home/vasia",
+          "gid": 27,
+          "uid": 1000,
+          "shell": "/bin/bash",
+          "gecos": ""
         }
       },
       "group": {
@@ -1134,12 +1141,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 184829,
-    "uptime": "2 days 03 hours 20 minutes 29 seconds",
-    "idletime_seconds": 184431,
-    "idletime": "2 days 03 hours 13 minutes 51 seconds",
+    "uptime_seconds": 535935,
+    "uptime": "6 days 04 hours 52 minutes 15 seconds",
+    "idletime_seconds": 534415,
+    "idletime": "6 days 04 hours 26 minutes 55 seconds",
     "root_group": "root",
-    "ohai_time": 1408598566.9240189,
+    "ohai_time": 1408949673.275753,
     "block_device": {
       "sr0": {
         "size": "2097151",
@@ -1255,7 +1262,7 @@
     "recipes": [
       "dwbru-host",
       "dwbru-host::default",
-      "dwbru-host::nginx"
+      "dwbru-host::basic-auth-managment"
     ],
     "roles": [
 

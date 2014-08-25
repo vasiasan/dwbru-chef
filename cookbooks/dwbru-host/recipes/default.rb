@@ -6,4 +6,4 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-include_recipe "dwbru-host::nginx"
+include_recipe "dwbru-host::basic-auth-managment"
