@@ -2,5 +2,5 @@
 knife[:editor] = "nano"
 local_mode true
 cookbook_path [
-		"/mnt/chef-repo/cookbook"
+		"/var/chef-repo/cookbook"
 ]
