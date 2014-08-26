@@ -1,0 +1,24 @@
+{
+  "normal": {
+    "users": [
+      {
+        "name": "petya",
+        "status": "on",
+        "shell": "/bin/bash",
+        "group": "sudo"
+      },
+      {
+        "name": "masha",
+        "status": "on",
+        "shell": "/bin/bash",
+        "group": "sudo"
+      }
+    ],
+    "tags": [
+
+    ]
+  },
+  "run_list": [
+    "role[dwbru-host]"
+  ]
+}
