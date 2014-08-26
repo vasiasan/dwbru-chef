@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
+# Debug envs
 file "#{ENV['HOME']}/z.txt" do
-  content node['hostname']
+  content node.name
 end
 
 
@@ -23,7 +24,7 @@ cookbook_file "sudo group password promt OFF" do
   action :create
 end
 
-cookbook_file "prohibit group record in the created files" do
+cookbook_file "group record in the created files OFF" do
   source "login.defs"
   path "/etc/login.defs"
   owner "root"
@@ -32,7 +33,7 @@ cookbook_file "prohibit group record in the created files" do
   action :create
 end
 
-cookbook_file "Disable password and root ssh authentication" do
+cookbook_file "password and root ssh authentication OFF" do
   source "sshd_config"
   path "/etc/ssh/sshd_config"
   owner "root"
@@ -51,16 +52,45 @@ service "ssh" do
 #  action :reload
 end
 
-=begin
+node['users'].each do |user|
+  user user["name"] do
+    username user["name"]
+    comment user["fullname"]
+    shell user["shell"]
+    gid user["group"]
+    action ( { "on" => [:create, :unlock], "off" => [:create, :lock] }[ user["status"] ] )
+  end
+end
 
-#sudo useradd -c "First Last" -s /bin/bash -G sudo,adm -U -m mylogin
+file "/etc/hostname" do
+  content node.name
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :run, "execute[hostname]"
+end
 
-user #{node[main-user]} do
-  username #{node[main-user]}
-  comment
-  shell
-  gid
+execute "hostname" do
+  command "hostname -F /etc/hostname"
+  action :nothing
+end
+
+file "/etc/mailname" do
+  content "#{node.name}.#{node['domainname']}"
+  owner "root"
+  group "root"
+  mode "0644"
   action :create
 end
+
+=begin
+
+sudo sh -c "echo myhost > /etc/hostname"
+sudo hostname -F /etc/hostname
+sudo sh -c "echo myhost.fqdn > /etc/mailname"
+Убеждаемся, что /etc/hosts для 127.0.0.1 указывает лишь localhost
+Дописываем строчку в нашим внешним IP в /etc/hosts:
+1.2.3.4	myhost.fqdn myhost
 
 =end

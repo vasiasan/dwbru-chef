@@ -6,4 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-include_recipe "dwbru-host::basic-auth-managment"
+
+# Replace to roles
+#include_recipe "dwbru-host::basic-auth-managment"

@@ -1,9 +1,28 @@
 {
   "name": "CHEF",
   "normal": {
+    "users": [
+      {
+        "name": "misha",
+        "status": "on",
+        "fullname": "Misha Pachkov",
+        "shell": "/bin/bash",
+        "group": "sudo"
+      },
+      {
+        "name": "masha",
+        "status": "on",
+        "fullname": "Masha Pushkina",
+        "shell": "/bin/bash",
+        "group": "sudo"
+      }
+    ],
     "tags": [
 
     ]
+  },
+  "default": {
+    "domainname": "dwbru.net"
   },
   "automatic": {
     "network": {
@@ -93,15 +112,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "4945491",
-              "packets": "4423",
+              "bytes": "9658229",
+              "packets": "8412",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "4945491",
-              "packets": "4423",
+              "bytes": "9658229",
+              "packets": "8412",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -111,16 +130,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "29054104",
-              "packets": "126131",
+              "bytes": "35702056",
+              "packets": "146671",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "220012622",
-              "packets": "2857038",
+              "bytes": "251826620",
+              "packets": "3383495",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -246,13 +265,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "1893112",
-        "kb_available": "17551340",
+        "kb_used": "1893356",
+        "kb_available": "17551096",
         "percent_used": "10%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "106228",
-        "inodes_available": "1204492",
+        "inodes_used": "106274",
+        "inodes_available": "1204446",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -267,8 +286,8 @@
         "percent_used": "0%",
         "mount": "/sys/fs/pstore",
         "total_inodes": "62728",
-        "inodes_used": "2",
-        "inodes_available": "62726",
+        "inodes_used": "3",
+        "inodes_available": "62725",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -293,13 +312,13 @@
       },
       "tmpfs": {
         "kb_size": "50184",
-        "kb_used": "312",
-        "kb_available": "49872",
+        "kb_used": "316",
+        "kb_available": "49868",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "62728",
-        "inodes_used": "311",
-        "inodes_available": "62417",
+        "inodes_used": "312",
+        "inodes_available": "62416",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -383,23 +402,23 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "33236kB",
-      "buffers": "39584kB",
-      "cached": "294072kB",
-      "active": "267968kB",
-      "inactive": "143384kB",
-      "dirty": "52kB",
+      "free": "67308kB",
+      "buffers": "16396kB",
+      "cached": "282356kB",
+      "active": "264668kB",
+      "inactive": "112088kB",
+      "dirty": "16kB",
       "writeback": "0kB",
-      "anon_pages": "77700kB",
+      "anon_pages": "78000kB",
       "mapped": "8996kB",
-      "slab": "47636kB",
-      "slab_reclaimable": "40016kB",
-      "slab_unreclaim": "7620kB",
+      "slab": "48156kB",
+      "slab_reclaimable": "40500kB",
+      "slab_unreclaim": "7656kB",
       "page_tables": "2164kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "139836kB",
+      "committed_as": "139976kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "3176kB",
       "vmalloc_chunk": "34359726040kB"
@@ -819,6 +838,20 @@
           "uid": 1000,
           "shell": "/bin/bash",
           "gecos": ""
+        },
+        "masha": {
+          "dir": "/home/masha",
+          "gid": 27,
+          "uid": 1002,
+          "shell": "/bin/bash",
+          "gecos": "Masha Pushkina"
+        },
+        "misha": {
+          "dir": "/home/misha",
+          "gid": 27,
+          "uid": 1003,
+          "shell": "/bin/bash",
+          "gecos": "Misha Pachkov"
         }
       },
       "group": {
@@ -1141,12 +1174,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 535935,
-    "uptime": "6 days 04 hours 52 minutes 15 seconds",
-    "idletime_seconds": 534415,
-    "idletime": "6 days 04 hours 26 minutes 55 seconds",
+    "uptime_seconds": 631460,
+    "uptime": "7 days 07 hours 24 minutes 20 seconds",
+    "idletime_seconds": 629543,
+    "idletime": "7 days 06 hours 52 minutes 23 seconds",
     "root_group": "root",
-    "ohai_time": 1408949673.275753,
+    "ohai_time": 1409045198.5351436,
     "block_device": {
       "sr0": {
         "size": "2097151",
@@ -1260,15 +1293,13 @@
       }
     },
     "recipes": [
-      "dwbru-host",
-      "dwbru-host::default",
       "dwbru-host::basic-auth-managment"
     ],
     "roles": [
-
+      "dwbru-host"
     ]
   },
   "run_list": [
-    "recipe[dwbru-host]"
+    "role[dwbru-host]"
   ]
 }
