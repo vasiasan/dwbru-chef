@@ -77,7 +77,32 @@ execute "hostname" do
 end
 
 file "/etc/mailname" do
-  content "#{node.name}.#{node['domainname']}"
+  content "#{node.name}.#{node['domain']}"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+end
+
+template "/etc/hosts" do
+  source "hosts.erb"
+  owner "root"
+  group "root"
+  mode 0644
+  variables(
+    'ip' => node["ipaddress"],
+    'host' => node.name,
+    'domain' => node["domain"]
+  )
+end
+
+# Setting timeZone
+link "/etc/localtime" do
+  to "/usr/share/zoneinfo/UTC"
+end
+
+file "/etc/timezone" do
+  content "UTC"
   owner "root"
   group "root"
   mode "0644"
@@ -86,11 +111,5 @@ end
 
 =begin
 
-sudo sh -c "echo myhost > /etc/hostname"
-sudo hostname -F /etc/hostname
-sudo sh -c "echo myhost.fqdn > /etc/mailname"
-Убеждаемся, что /etc/hosts для 127.0.0.1 указывает лишь localhost
-Дописываем строчку в нашим внешним IP в /etc/hosts:
-1.2.3.4	myhost.fqdn myhost
 
 =end
