@@ -1,1 +1,1 @@
-default["domainname"] = "dwbru.net"
+default["domain"] = "dwbru.net"

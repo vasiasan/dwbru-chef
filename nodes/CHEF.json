@@ -22,7 +22,18 @@
     ]
   },
   "default": {
-    "domainname": "dwbru.net"
+    "domain": "dwbru.net",
+    "resolver": {
+      "search": "dwbru.net",
+      "nameservers": [
+        "8.8.8.8",
+        "8.8.4.4",
+        "209.244.0.3"
+      ],
+      "options": {
+      },
+      "server_role": "nameserver"
+    }
   },
   "automatic": {
     "network": {
@@ -112,15 +123,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "9658229",
-              "packets": "8412",
+              "bytes": "12857729",
+              "packets": "11446",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "9658229",
-              "packets": "8412",
+              "bytes": "12857729",
+              "packets": "11446",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -130,16 +141,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "35702056",
-              "packets": "146671",
+              "bytes": "41991055",
+              "packets": "164694",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "251826620",
-              "packets": "3383495",
+              "bytes": "281113247",
+              "packets": "3855439",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -265,13 +276,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "1893356",
-        "kb_available": "17551096",
+        "kb_used": "1894012",
+        "kb_available": "17550440",
         "percent_used": "10%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "106274",
-        "inodes_available": "1204446",
+        "inodes_used": "106374",
+        "inodes_available": "1204346",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -402,23 +413,23 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "67308kB",
-      "buffers": "16396kB",
-      "cached": "282356kB",
-      "active": "264668kB",
-      "inactive": "112088kB",
-      "dirty": "16kB",
+      "free": "52296kB",
+      "buffers": "19848kB",
+      "cached": "293568kB",
+      "active": "230900kB",
+      "inactive": "160652kB",
+      "dirty": "40kB",
       "writeback": "0kB",
-      "anon_pages": "78000kB",
-      "mapped": "8996kB",
-      "slab": "48156kB",
-      "slab_reclaimable": "40500kB",
-      "slab_unreclaim": "7656kB",
-      "page_tables": "2164kB",
+      "anon_pages": "78156kB",
+      "mapped": "9000kB",
+      "slab": "48412kB",
+      "slab_reclaimable": "40740kB",
+      "slab_unreclaim": "7672kB",
+      "page_tables": "2172kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "139976kB",
+      "committed_as": "140036kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "3176kB",
       "vmalloc_chunk": "34359726040kB"
@@ -1174,12 +1185,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 631460,
-    "uptime": "7 days 07 hours 24 minutes 20 seconds",
-    "idletime_seconds": 629543,
-    "idletime": "7 days 06 hours 52 minutes 23 seconds",
+    "uptime_seconds": 716956,
+    "uptime": "8 days 07 hours 09 minutes 16 seconds",
+    "idletime_seconds": 714723,
+    "idletime": "8 days 06 hours 32 minutes 03 seconds",
     "root_group": "root",
-    "ohai_time": 1409045198.5351436,
+    "ohai_time": 1409130694.5254848,
     "block_device": {
       "sr0": {
         "size": "2097151",
@@ -1293,7 +1304,9 @@
       }
     },
     "recipes": [
-      "dwbru-host::basic-auth-managment"
+      "dwbru-host::basic-auth-managment",
+      "resolver",
+      "resolver::default"
     ],
     "roles": [
       "dwbru-host"
