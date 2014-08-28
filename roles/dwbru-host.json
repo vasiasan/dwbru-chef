@@ -2,7 +2,8 @@
   "name": "dwbru-host",
   "description": "your-domain.ru host settings",
   "run_list": [
-    "recipe[dwbru-host::basic-auth-managment]",
-    "recipe[resolver]"
+    "recipe[dwbru-host::basic-managment]",
+    "recipe[resolver]",
+    "recipe[ufw]"
   ]
 }

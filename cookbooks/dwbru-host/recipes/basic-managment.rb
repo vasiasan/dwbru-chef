@@ -52,6 +52,7 @@ service "ssh" do
 #  action :reload
 end
 
+# Users settings from list of node.json file
 node['users'].each do |user|
   user user["name"] do
     username user["name"]
@@ -62,6 +63,7 @@ node['users'].each do |user|
   end
 end
 
+# Setting hostname
 file "/etc/hostname" do
   content node.name
   owner "root"
@@ -84,6 +86,7 @@ file "/etc/mailname" do
   action :create
 end
 
+# Settings /etc/hosts from hostname IP domain settings 
 template "/etc/hosts" do
   source "hosts.erb"
   owner "root"
@@ -108,6 +111,35 @@ file "/etc/timezone" do
   mode "0644"
   action :create
 end
+
+# Search domain set
+template "/etc/dhcp/dhclient.conf" do
+  source "dhclient.conf.erb"
+  owner "root"
+  group "root"
+  mode 0644
+  variables(
+    'domain' => node["domain"]
+  )
+end
+
+# Install list of packages from attributes
+node["usefulPackages"].each do |pkg|
+    package "#{pkg}" do
+       action :install
+    end
+end
+
+cookbook_file "Security updates ON" do
+  source "50unattended-upgrades"
+  path "/etc/apt/apt.conf.d/50unattended-upgrades"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+end
+
+
 
 =begin
 

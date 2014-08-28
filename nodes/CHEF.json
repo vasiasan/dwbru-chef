@@ -19,10 +19,36 @@
     ],
     "tags": [
 
-    ]
+    ],
+    "firewall": {
+      "state": "[{\"ftp\"=>{\"port\"=>\"21\"}}, {\"ssh\"=>{\"port\"=>\"22\"}}, {\"http\"=>{\"port\"=>\"80\"}}, {\"http2\"=>{\"port\"=>\"88\"}}, {\"https\"=>{\"port\"=>\"443\"}}, {\"traceroute\"=>{\"port_range\"=>\"33434..33534\", \"protocol\"=>\"udp\"}}]"
+    }
   },
   "default": {
     "domain": "dwbru.net",
+    "usefulPackages": [
+      "zsh",
+      "git",
+      "bash-completion",
+      "command-not-found",
+      "man-db",
+      "iptables",
+      "psmisc",
+      "acl",
+      "telnet",
+      "wget",
+      "dnsutils",
+      "traceroute",
+      "lsof",
+      "mlocate",
+      "rsync",
+      "ncurses-term",
+      "vim",
+      "dstat",
+      "apt-file",
+      "makepasswd",
+      "unattended-upgrades"
+    ],
     "resolver": {
       "search": "dwbru.net",
       "nameservers": [
@@ -33,6 +59,42 @@
       "options": {
       },
       "server_role": "nameserver"
+    },
+    "firewall": {
+      "rules": [
+        {
+          "ftp": {
+            "port": "21"
+          }
+        },
+        {
+          "ssh": {
+            "port": "22"
+          }
+        },
+        {
+          "http": {
+            "port": "80"
+          }
+        },
+        {
+          "http2": {
+            "port": "88"
+          }
+        },
+        {
+          "https": {
+            "port": "443"
+          }
+        },
+        {
+          "traceroute": {
+            "port_range": "33434..33534",
+            "protocol": "udp"
+          }
+        }
+      ],
+      "securitylevel": ""
     }
   },
   "automatic": {
@@ -123,15 +185,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "12857729",
-              "packets": "11446",
+              "bytes": "14010938",
+              "packets": "12560",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "12857729",
-              "packets": "11446",
+              "bytes": "14010938",
+              "packets": "12560",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -141,16 +203,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "41991055",
-              "packets": "164694",
+              "bytes": "46148388",
+              "packets": "178371",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "281113247",
-              "packets": "3855439",
+              "bytes": "308671074",
+              "packets": "4239841",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -179,6 +241,110 @@
       "machine": "x86_64",
       "os": "GNU/Linux",
       "modules": {
+        "ip6t_REJECT": {
+          "size": "12939",
+          "refcount": "1"
+        },
+        "xt_hl": {
+          "size": "12521",
+          "refcount": "6"
+        },
+        "ip6t_rt": {
+          "size": "13537",
+          "refcount": "3"
+        },
+        "ipt_REJECT": {
+          "size": "12541",
+          "refcount": "1"
+        },
+        "xt_LOG": {
+          "size": "17717",
+          "refcount": "10"
+        },
+        "xt_multiport": {
+          "size": "12798",
+          "refcount": "2"
+        },
+        "xt_limit": {
+          "size": "12711",
+          "refcount": "13"
+        },
+        "xt_tcpudp": {
+          "size": "12884",
+          "refcount": "34"
+        },
+        "xt_addrtype": {
+          "size": "12635",
+          "refcount": "4"
+        },
+        "nf_conntrack_netbios_ns": {
+          "size": "12665",
+          "refcount": "0"
+        },
+        "nf_conntrack_broadcast": {
+          "size": "12589",
+          "refcount": "1"
+        },
+        "nf_nat_ftp": {
+          "size": "12770",
+          "refcount": "0"
+        },
+        "nf_nat": {
+          "size": "21841",
+          "refcount": "1"
+        },
+        "nf_conntrack_ftp": {
+          "size": "18638",
+          "refcount": "1"
+        },
+        "nf_conntrack_ipv6": {
+          "size": "18894",
+          "refcount": "8"
+        },
+        "nf_defrag_ipv6": {
+          "size": "34768",
+          "refcount": "1"
+        },
+        "ip6table_filter": {
+          "size": "12815",
+          "refcount": "1"
+        },
+        "ip6_tables": {
+          "size": "27025",
+          "refcount": "1"
+        },
+        "nf_conntrack_ipv4": {
+          "size": "15012",
+          "refcount": "8"
+        },
+        "nf_defrag_ipv4": {
+          "size": "12758",
+          "refcount": "1"
+        },
+        "xt_recent": {
+          "size": "18498",
+          "refcount": "0"
+        },
+        "xt_conntrack": {
+          "size": "12760",
+          "refcount": "16"
+        },
+        "nf_conntrack": {
+          "size": "96976",
+          "refcount": "8"
+        },
+        "iptable_filter": {
+          "size": "12810",
+          "refcount": "1"
+        },
+        "ip_tables": {
+          "size": "27239",
+          "refcount": "1"
+        },
+        "x_tables": {
+          "size": "34059",
+          "refcount": "15"
+        },
         "ppdev": {
           "size": "17671",
           "refcount": "0"
@@ -276,13 +442,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "1894012",
-        "kb_available": "17550440",
+        "kb_used": "1914168",
+        "kb_available": "17530284",
         "percent_used": "10%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "106374",
-        "inodes_available": "1204346",
+        "inodes_used": "107911",
+        "inodes_available": "1202809",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -413,26 +579,26 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "52296kB",
-      "buffers": "19848kB",
-      "cached": "293568kB",
-      "active": "230900kB",
-      "inactive": "160652kB",
-      "dirty": "40kB",
+      "free": "77328kB",
+      "buffers": "23816kB",
+      "cached": "261244kB",
+      "active": "223928kB",
+      "inactive": "139448kB",
+      "dirty": "72kB",
       "writeback": "0kB",
-      "anon_pages": "78156kB",
-      "mapped": "9000kB",
-      "slab": "48412kB",
-      "slab_reclaimable": "40740kB",
-      "slab_unreclaim": "7672kB",
-      "page_tables": "2172kB",
+      "anon_pages": "78336kB",
+      "mapped": "9100kB",
+      "slab": "50596kB",
+      "slab_reclaimable": "42744kB",
+      "slab_unreclaim": "7852kB",
+      "page_tables": "2144kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "140036kB",
+      "committed_as": "140020kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "3176kB",
-      "vmalloc_chunk": "34359726040kB"
+      "vmalloc_used": "3248kB",
+      "vmalloc_chunk": "34359721792kB"
     },
     "cpu": {
       "0": {
@@ -1185,12 +1351,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 716956,
-    "uptime": "8 days 07 hours 09 minutes 16 seconds",
-    "idletime_seconds": 714723,
-    "idletime": "8 days 06 hours 32 minutes 03 seconds",
+    "uptime_seconds": 800227,
+    "uptime": "9 days 06 hours 17 minutes 07 seconds",
+    "idletime_seconds": 797700,
+    "idletime": "9 days 05 hours 35 minutes 00 seconds",
     "root_group": "root",
-    "ohai_time": 1409130694.5254848,
+    "ohai_time": 1409213964.6308308,
     "block_device": {
       "sr0": {
         "size": "2097151",
@@ -1304,9 +1470,11 @@
       }
     },
     "recipes": [
-      "dwbru-host::basic-auth-managment",
+      "dwbru-host::basic-managment",
       "resolver",
-      "resolver::default"
+      "ufw",
+      "resolver::default",
+      "ufw::default"
     ],
     "roles": [
       "dwbru-host"
