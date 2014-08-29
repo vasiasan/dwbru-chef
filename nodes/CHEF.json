@@ -6,14 +6,14 @@
         "name": "misha",
         "status": "on",
         "fullname": "Misha Pachkov",
-        "shell": "/bin/bash",
+        "shell": "/usr/bin/zsh",
         "group": "sudo"
       },
       {
         "name": "masha",
         "status": "on",
         "fullname": "Masha Pushkina",
-        "shell": "/bin/bash",
+        "shell": "/usr/bin/zsh",
         "group": "sudo"
       }
     ],
@@ -21,7 +21,7 @@
 
     ],
     "firewall": {
-      "state": "[{\"ftp\"=>{\"port\"=>\"21\"}}, {\"ssh\"=>{\"port\"=>\"22\"}}, {\"http\"=>{\"port\"=>\"80\"}}, {\"http2\"=>{\"port\"=>\"88\"}}, {\"https\"=>{\"port\"=>\"443\"}}, {\"traceroute\"=>{\"port_range\"=>\"33434..33534\", \"protocol\"=>\"udp\"}}]"
+      "state": "[{\"ftp\"=>{\"port\"=>\"21\"}}, {\"ssh\"=>{\"port\"=>\"22\"}}, {\"http\"=>{\"port\"=>\"80\"}}, {\"https\"=>{\"port\"=>\"443\"}}, {\"traceroute\"=>{\"port_range\"=>\"33434..33534\", \"protocol\"=>\"udp\"}}]"
     }
   },
   "default": {
@@ -47,7 +47,21 @@
       "dstat",
       "apt-file",
       "makepasswd",
-      "unattended-upgrades"
+      "unattended-upgrades",
+      "postfix",
+      "bsd-mailx",
+      "mysql-server",
+      "nginx",
+      "php5-fpm",
+      "php5-mysql",
+      "php5-mcrypt",
+      "php5-gd",
+      "php5-json",
+      "libapache2-mod-macro",
+      "libapache2-mod-php5",
+      "postgresql",
+      "pgtune",
+      "vsftpd"
     ],
     "resolver": {
       "search": "dwbru.net",
@@ -75,11 +89,6 @@
         {
           "http": {
             "port": "80"
-          }
-        },
-        {
-          "http2": {
-            "port": "88"
           }
         },
         {
@@ -185,15 +194,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "14010938",
-              "packets": "12560",
+              "bytes": "14308106",
+              "packets": "12718",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "14010938",
-              "packets": "12560",
+              "bytes": "14308106",
+              "packets": "12718",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -203,16 +212,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "46148388",
-              "packets": "178371",
+              "bytes": "49750200",
+              "packets": "192971",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "308671074",
-              "packets": "4239841",
+              "bytes": "336777816",
+              "packets": "4690090",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -243,7 +252,7 @@
       "modules": {
         "ip6t_REJECT": {
           "size": "12939",
-          "refcount": "1"
+          "refcount": "0"
         },
         "xt_hl": {
           "size": "12521",
@@ -271,7 +280,7 @@
         },
         "xt_tcpudp": {
           "size": "12884",
-          "refcount": "34"
+          "refcount": "38"
         },
         "xt_addrtype": {
           "size": "12635",
@@ -442,13 +451,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "1914168",
-        "kb_available": "17530284",
+        "kb_used": "1915328",
+        "kb_available": "17529124",
         "percent_used": "10%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "107911",
-        "inodes_available": "1202809",
+        "inodes_used": "108008",
+        "inodes_available": "1202712",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -463,8 +472,8 @@
         "percent_used": "0%",
         "mount": "/sys/fs/pstore",
         "total_inodes": "62728",
-        "inodes_used": "3",
-        "inodes_available": "62725",
+        "inodes_used": "2",
+        "inodes_available": "62726",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -489,13 +498,13 @@
       },
       "tmpfs": {
         "kb_size": "50184",
-        "kb_used": "316",
-        "kb_available": "49868",
+        "kb_used": "308",
+        "kb_available": "49876",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "62728",
-        "inodes_used": "312",
-        "inodes_available": "62416",
+        "inodes_used": "310",
+        "inodes_available": "62418",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -579,26 +588,26 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "77328kB",
-      "buffers": "23816kB",
-      "cached": "261244kB",
-      "active": "223928kB",
-      "inactive": "139448kB",
-      "dirty": "72kB",
+      "free": "67336kB",
+      "buffers": "20628kB",
+      "cached": "272584kB",
+      "active": "255144kB",
+      "inactive": "118584kB",
+      "dirty": "304kB",
       "writeback": "0kB",
-      "anon_pages": "78336kB",
-      "mapped": "9100kB",
-      "slab": "50596kB",
-      "slab_reclaimable": "42744kB",
-      "slab_unreclaim": "7852kB",
-      "page_tables": "2144kB",
+      "anon_pages": "80516kB",
+      "mapped": "9556kB",
+      "slab": "49540kB",
+      "slab_reclaimable": "41556kB",
+      "slab_unreclaim": "7984kB",
+      "page_tables": "2712kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "140020kB",
+      "committed_as": "143796kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "3248kB",
-      "vmalloc_chunk": "34359721792kB"
+      "vmalloc_chunk": "34359728880kB"
     },
     "cpu": {
       "0": {
@@ -1346,17 +1355,17 @@
         }
       }
     },
-    "current_user": "root",
+    "current_user": "vasia",
     "hostname": "CHEF",
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 800227,
-    "uptime": "9 days 06 hours 17 minutes 07 seconds",
-    "idletime_seconds": 797700,
-    "idletime": "9 days 05 hours 35 minutes 00 seconds",
+    "uptime_seconds": 890773,
+    "uptime": "10 days 07 hours 26 minutes 13 seconds",
+    "idletime_seconds": 888129,
+    "idletime": "10 days 06 hours 42 minutes 09 seconds",
     "root_group": "root",
-    "ohai_time": 1409213964.6308308,
+    "ohai_time": 1409304510.599322,
     "block_device": {
       "sr0": {
         "size": "2097151",

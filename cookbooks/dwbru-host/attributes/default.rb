@@ -22,5 +22,19 @@ default["usefulPackages"] = [
           "dstat",
           "apt-file",
           "makepasswd",
-          "unattended-upgrades"
+          "unattended-upgrades",
+          "postfix",
+          "bsd-mailx",
+          "mysql-server",
+          "nginx",
+          "php5-fpm",
+          "php5-mysql",
+          "php5-mcrypt",
+          "php5-gd",
+          "php5-json",
+          "libapache2-mod-macro",
+          "libapache2-mod-php5",
+          "postgresql",
+          "pgtune",
+          "vsftpd"
 ]
