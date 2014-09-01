@@ -194,15 +194,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "14308106",
-              "packets": "12718",
+              "bytes": "23969736",
+              "packets": "40465",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "14308106",
-              "packets": "12718",
+              "bytes": "23969736",
+              "packets": "40465",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -212,16 +212,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "49750200",
-              "packets": "192971",
+              "bytes": "59788748",
+              "packets": "230194",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "336777816",
-              "packets": "4690090",
+              "bytes": "435055625",
+              "packets": "5868076",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -280,7 +280,7 @@
         },
         "xt_tcpudp": {
           "size": "12884",
-          "refcount": "38"
+          "refcount": "34"
         },
         "xt_addrtype": {
           "size": "12635",
@@ -436,6 +436,10 @@
       "python": {
         "version": "2.7.6",
         "builddate": "Mar 22 2014, 22:59:56"
+      },
+      "php": {
+        "version": "5.5.9-1ubuntu4.3",
+        "builddate": "Jul  7 2014 16:36:58"
       }
     },
     "chef_packages": {
@@ -451,13 +455,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "1915328",
-        "kb_available": "17529124",
-        "percent_used": "10%",
+        "kb_used": "2165620",
+        "kb_available": "17278832",
+        "percent_used": "12%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "108008",
-        "inodes_available": "1202712",
+        "inodes_used": "112046",
+        "inodes_available": "1198674",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -498,13 +502,13 @@
       },
       "tmpfs": {
         "kb_size": "50184",
-        "kb_used": "308",
-        "kb_available": "49876",
+        "kb_used": "332",
+        "kb_available": "49852",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "62728",
-        "inodes_used": "310",
-        "inodes_available": "62418",
+        "inodes_used": "324",
+        "inodes_available": "62404",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -588,26 +592,26 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "67336kB",
-      "buffers": "20628kB",
-      "cached": "272584kB",
-      "active": "255144kB",
-      "inactive": "118584kB",
-      "dirty": "304kB",
+      "free": "55100kB",
+      "buffers": "38820kB",
+      "cached": "210412kB",
+      "active": "256704kB",
+      "inactive": "122672kB",
+      "dirty": "0kB",
       "writeback": "0kB",
-      "anon_pages": "80516kB",
-      "mapped": "9556kB",
-      "slab": "49540kB",
-      "slab_reclaimable": "41556kB",
-      "slab_unreclaim": "7984kB",
-      "page_tables": "2712kB",
+      "anon_pages": "130144kB",
+      "mapped": "29632kB",
+      "slab": "52032kB",
+      "slab_reclaimable": "42464kB",
+      "slab_unreclaim": "9568kB",
+      "page_tables": "6052kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "143796kB",
+      "committed_as": "746144kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "3248kB",
-      "vmalloc_chunk": "34359728880kB"
+      "vmalloc_used": "3312kB",
+      "vmalloc_chunk": "34359702804kB"
     },
     "cpu": {
       "0": {
@@ -1029,15 +1033,43 @@
           "dir": "/home/masha",
           "gid": 27,
           "uid": 1002,
-          "shell": "/bin/bash",
+          "shell": "/usr/bin/zsh",
           "gecos": "Masha Pushkina"
         },
         "misha": {
           "dir": "/home/misha",
           "gid": 27,
           "uid": 1003,
-          "shell": "/bin/bash",
+          "shell": "/usr/bin/zsh",
           "gecos": "Misha Pachkov"
+        },
+        "postfix": {
+          "dir": "/var/spool/postfix",
+          "gid": 115,
+          "uid": 106,
+          "shell": "/bin/false",
+          "gecos": ""
+        },
+        "mysql": {
+          "dir": "/nonexistent",
+          "gid": 117,
+          "uid": 107,
+          "shell": "/bin/false",
+          "gecos": "MySQL Server,,,"
+        },
+        "postgres": {
+          "dir": "/var/lib/postgresql",
+          "gid": 118,
+          "uid": 108,
+          "shell": "/bin/bash",
+          "gecos": "PostgreSQL administrator,,,"
+        },
+        "ftp": {
+          "dir": "/srv/ftp",
+          "gid": 119,
+          "uid": 109,
+          "shell": "/bin/false",
+          "gecos": "ftp daemon,,,"
         }
       },
       "group": {
@@ -1352,6 +1384,42 @@
           "members": [
 
           ]
+        },
+        "ssl-cert": {
+          "gid": 114,
+          "members": [
+            "postgres"
+          ]
+        },
+        "postfix": {
+          "gid": 115,
+          "members": [
+
+          ]
+        },
+        "postdrop": {
+          "gid": 116,
+          "members": [
+
+          ]
+        },
+        "mysql": {
+          "gid": 117,
+          "members": [
+
+          ]
+        },
+        "postgres": {
+          "gid": 118,
+          "members": [
+
+          ]
+        },
+        "ftp": {
+          "gid": 119,
+          "members": [
+
+          ]
         }
       }
     },
@@ -1360,12 +1428,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 890773,
-    "uptime": "10 days 07 hours 26 minutes 13 seconds",
-    "idletime_seconds": 888129,
-    "idletime": "10 days 06 hours 42 minutes 09 seconds",
+    "uptime_seconds": 1148796,
+    "uptime": "13 days 07 hours 06 minutes 36 seconds",
+    "idletime_seconds": 1144303,
+    "idletime": "13 days 05 hours 51 minutes 43 seconds",
     "root_group": "root",
-    "ohai_time": 1409304510.599322,
+    "ohai_time": 1409562533.6541066,
     "block_device": {
       "sr0": {
         "size": "2097151",
