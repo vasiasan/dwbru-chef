@@ -139,9 +139,131 @@ cookbook_file "Security updates ON" do
   action :create
 end
 
+cookbook_file "/etc/aliases" do
+  source "aliases"
+  path "/etc/aliases"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :run, "execute[newaliases]"
+end
 
+file "/etc/postfix/catch-all-local.regexp" do
+  content "!/^owner-/ admin@your-domain.ru"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :reload, "service[postfix]"
+end
+
+cookbook_file "/etc/postfix/main.cf" do
+  source "main.cf"
+  path "/etc/postfix/main.cf"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :reload, "service[postfix]"
+end
+
+[ "", node['fqdn']+"/logs" ].each do |path|
+  directory "/srv/www/#{path}" do
+    owner "root"
+    group "www-data"
+    mode 00750
+    recursive true
+  end
+end
+
+directory "/srv/www/#{node['fqdn']}" do
+  owner "root"
+  group "www-data"
+  mode 00770
+end
+
+%w[ htdocs conf tmp ].each do |path|
+  directory "/srv/www/#{node['fqdn']}/#{path}" do
+    owner "www-data"
+    group "www-data"
+    mode 00770
+  end
+end
+
+directory "/etc/ssl/localcerts" do
+  owner "root"
+  group "ssl-cert"
+  mode 00710
+end
+
+cookbook_file "Logrotate nginx hosts" do
+  source "logrotate-nginx"
+  path "/etc/logrotate.d/nginx"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+end
+
+cookbook_file "Logrotate apache hosts" do
+  source "logrotate-apache2"
+  path "/etc/logrotate.d/apache2"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+end
+
+cookbook_file "vsftpd.conf" do
+  source "vsftpd.conf"
+  path "/etc/vsftpd.conf"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :reload, "service[vsftpd]"
+end
+
+cookbook_file "pamd-vsftpd" do
+  source "pamd-vsftpd"
+  path "/etc/pam.d/vsftpd"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :reload, "service[vsftpd]"
+end
+
+group "ftpuser" do
+  action :create
+  members "www-data"
+end
+
+execute "a2enmod actions rewrite vhost_alias macro" do
+  action :run
+end
+
+execute "newaliases" do
+  action :nothing
+end
+
+service "postfix" do
+  action :nothing
+end
+
+service "vsftpd" do
+  action :nothing
+end
 
 =begin
-
+# 33 Userd for www-data in default user apache
+user "www" do
+  uid 33
+  gid 33
+  shell "/bin/bash"
+  home "/srv/www"
+  action :create
+end
 
 =end
