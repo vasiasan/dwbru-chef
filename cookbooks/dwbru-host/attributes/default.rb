@@ -1,4 +1,8 @@
 default["domain"] = "dwbru.net"
+
+# If used Host Used in - ec2 for specific settings.
+default["ec2"] = false
+
 # WARN used in firewall cookbook
 #          "ufw",
 default["usefulPackages"] = [
@@ -25,7 +29,6 @@ default["usefulPackages"] = [
           "unattended-upgrades",
           "postfix",
           "bsd-mailx",
-          "mysql-server",
           "nginx",
           "php5-fpm",
           "php5-mysql",
@@ -34,7 +37,5 @@ default["usefulPackages"] = [
           "php5-json",
           "libapache2-mod-macro",
           "libapache2-mod-php5",
-          "postgresql",
-          "pgtune",
           "vsftpd"
 ]
