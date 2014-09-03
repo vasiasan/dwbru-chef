@@ -4,14 +4,14 @@
     "users": [
       {
         "name": "misha",
-        "status": "on",
+        "status": "off",
         "fullname": "Misha Pachkov",
         "shell": "/usr/bin/zsh",
         "group": "sudo"
       },
       {
         "name": "masha",
-        "status": "on",
+        "status": "off",
         "fullname": "Masha Pushkina",
         "shell": "/usr/bin/zsh",
         "group": "sudo"
@@ -26,6 +26,7 @@
   },
   "default": {
     "domain": "dwbru.net",
+    "ec2": false,
     "usefulPackages": [
       "zsh",
       "git",
@@ -50,7 +51,6 @@
       "unattended-upgrades",
       "postfix",
       "bsd-mailx",
-      "mysql-server",
       "nginx",
       "php5-fpm",
       "php5-mysql",
@@ -59,8 +59,6 @@
       "php5-json",
       "libapache2-mod-macro",
       "libapache2-mod-php5",
-      "postgresql",
-      "pgtune",
       "vsftpd"
     ],
     "resolver": {
@@ -194,15 +192,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "23969736",
-              "packets": "40465",
+              "bytes": "33599931",
+              "packets": "61206",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "23969736",
-              "packets": "40465",
+              "bytes": "33599931",
+              "packets": "61206",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -212,16 +210,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "59788748",
-              "packets": "230194",
+              "bytes": "77918771",
+              "packets": "299642",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "435055625",
-              "packets": "5868076",
+              "bytes": "487442106",
+              "packets": "6661681",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -455,13 +453,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "2165620",
-        "kb_available": "17278832",
+        "kb_used": "2168396",
+        "kb_available": "17276056",
         "percent_used": "12%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "112046",
-        "inodes_available": "1198674",
+        "inodes_used": "112079",
+        "inodes_available": "1198641",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -592,23 +590,23 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "55100kB",
-      "buffers": "38820kB",
-      "cached": "210412kB",
-      "active": "256704kB",
-      "inactive": "122672kB",
+      "free": "67312kB",
+      "buffers": "28364kB",
+      "cached": "209004kB",
+      "active": "299808kB",
+      "inactive": "70076kB",
       "dirty": "0kB",
       "writeback": "0kB",
-      "anon_pages": "130144kB",
-      "mapped": "29632kB",
-      "slab": "52032kB",
-      "slab_reclaimable": "42464kB",
-      "slab_unreclaim": "9568kB",
-      "page_tables": "6052kB",
+      "anon_pages": "132520kB",
+      "mapped": "31168kB",
+      "slab": "49336kB",
+      "slab_reclaimable": "39816kB",
+      "slab_unreclaim": "9520kB",
+      "page_tables": "6104kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "746144kB",
+      "committed_as": "746320kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "3312kB",
       "vmalloc_chunk": "34359702804kB"
@@ -1420,6 +1418,12 @@
           "members": [
 
           ]
+        },
+        "ftpuser": {
+          "gid": 1000,
+          "members": [
+            "www-data"
+          ]
         }
       }
     },
@@ -1428,12 +1432,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 1148796,
-    "uptime": "13 days 07 hours 06 minutes 36 seconds",
-    "idletime_seconds": 1144303,
-    "idletime": "13 days 05 hours 51 minutes 43 seconds",
+    "uptime_seconds": 1322757,
+    "uptime": "15 days 07 hours 25 minutes 57 seconds",
+    "idletime_seconds": 1316693,
+    "idletime": "15 days 05 hours 44 minutes 53 seconds",
     "root_group": "root",
-    "ohai_time": 1409562533.6541066,
+    "ohai_time": 1409736495.1055264,
     "block_device": {
       "sr0": {
         "size": "2097151",

@@ -2,20 +2,19 @@
   "normal": {
     "users": [
       {
-        "name": "petya",
-        "status": "on",
-        "shell": "/bin/bash",
+        "name": "misha",
+        "status": "off",
+        "fullname": "Misha Pachkov",
+        "shell": "/usr/bin/zsh",
         "group": "sudo"
       },
-      {
+      { 
         "name": "masha",
-        "status": "on",
+        "status": "off",
+        "fullname": "Masha Pushkina",
         "shell": "/bin/bash",
         "group": "sudo"
       }
-    ],
-    "tags": [
-
     ]
   },
   "run_list": [

@@ -59,7 +59,9 @@ node['users'].each do |user|
     comment user["fullname"]
     shell user["shell"]
     gid user["group"]
-    action ( { "on" => [:create, :unlock], "off" => [:create, :lock] }[ user["status"] ] )
+    action ( { "on" => :create, "off" => :remove }[ user["status"] ] )
+    # Maybe auth keys here
+    #notifies :create, "file[#{user}]"
   end
 end
 
@@ -118,6 +120,7 @@ template "/etc/dhcp/dhclient.conf" do
   owner "root"
   group "root"
   mode 0644
+  only_if { node['ec2'] }
   variables(
     'domain' => node["domain"]
   )
@@ -128,6 +131,32 @@ node["usefulPackages"].each do |pkg|
     package "#{pkg}" do
        action :install
     end
+end
+
+package "mysql-server" do
+  action :install
+  notifies :start, "service[mysql]"
+  notifies :run, "ruby_block[mysqlPasswordGeneration]"
+end
+
+service "mysql" do
+  action :enable
+end
+
+ruby_block "mysqlPasswordGeneration" do
+  block do
+
+    chars = [(0..9), ('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+    randomString = (0...32).map { chars[rand(chars.length)] }.join
+
+    File.open("/root/.my.cnf", 'w') { |file| file.write("[client]\npassword=#{randomString}\n") }
+    %x( mysqladmin -u root --password="" password #{randomString} )
+    print "\n    ******************************************************************\n"
+    print "    * New mysql root user password: #{randomString} *\n"
+    print "    ******************************************************************"
+
+  end
+  action :nothing
 end
 
 cookbook_file "Security updates ON" do
@@ -222,7 +251,7 @@ cookbook_file "vsftpd.conf" do
   group "root"
   mode "0644"
   action :create
-  notifies :reload, "service[vsftpd]"
+  notifies :restart, "service[vsftpd]"
 end
 
 cookbook_file "pamd-vsftpd" do
@@ -232,7 +261,7 @@ cookbook_file "pamd-vsftpd" do
   group "root"
   mode "0644"
   action :create
-  notifies :reload, "service[vsftpd]"
+  notifies :restart, "service[vsftpd]"
 end
 
 group "ftpuser" do
