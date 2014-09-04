@@ -3,9 +3,9 @@ First steps
 
 Install additional software
 ```bash
-apt-get update
-apt-get install ruby git
-gem install hub
+sudo apt-get update
+sudo apt-get install ruby git
+sudo gem install hub
 ```
 
 Install cheff
@@ -15,15 +15,15 @@ curl -L https://www.getchef.com/chef/install.sh | sudo bash
 
 Get dwbru chef-repository
 ```bash
-mkdir /var/chef-repo/
-cd /var/chef-repo/
-hub checkout dwbru/chef-repo
+cd /var/
+sudo git clone https://github.com/dwbru/chef-repo
+cd /var/chef-repo
 ```
 
 Copy configurations
 ```bash
 cp ./additional/configFiles/knife.rb ~/.chef/
-cp ./additional/configFiles/client.rb /etc/chef/
+sudo cp ./additional/configFiles/client.rb /etc/chef/
 ```
 
 Configure node
@@ -34,7 +34,7 @@ knife node edit NEW-NODE-NAME
 
 Run
 ```bash
-chef-client
+sudo chef-client
 ```
 
 Overview
