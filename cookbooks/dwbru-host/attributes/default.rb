@@ -6,6 +6,7 @@ default["ec2"] = false
 # WARN used in firewall cookbook
 #          "ufw",
 default["usefulPackages"] = [
+          "mc",
           "zsh",
           "git",
           "bash-completion",

@@ -3,16 +3,19 @@
   "normal": {
     "users": [
       {
-        "name": "misha",
-        "status": "off",
-        "fullname": "Misha Pachkov",
-        "shell": "/usr/bin/zsh",
-        "group": "sudo"
+        "name": "vasia",
+        "status": "on",
+        "fullname": "Vasiliy Sannikov",
+        "shell": "/bin/bash",
+        "group": "sudo",
+        "ssh_keys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA2MO3eQ6ZuGX0kN5ndlCWXhMqiLRLXOfmsPwMb4MBvg0ktqzkGZIC4IY5PNgIktTBloKoCcNLDBq/BwnJroOyPj4X1VybjjsQKdZUAPRZOsp0YcezfD0LlyClMGdqTIWAYT52SaQ+ZG5n8MylXGXjjgbyrTsvwr+U8J6FkumZkQ/KTFXVzvJIwnR/TpkIUzHHn0JBsPmhBUwS6l2Mx1idxHXDuwuOL5ismhXD3L2QZUghCzWM4nwfQTvLJzmeefhZQOARGz3NRqhjVYx9xAo/vQJJaLuyuYLPkRtpbe0vgYSu7vTACL92zP/Ckb78Uhs0kDTQpkGqcU9Q6McdcYl+cWfAN0F4MGJMkvbI4/Zgvd+UBuQyKop//Bjk9bHo5KZyJiNOmjRcJ5H4p8YRPtqx3D+h/nusw/DRp2fs1FaGOseKclQiMKU0bjbpdRqCfYLByOhpn2KSicDZYYOCARn1q9wA0M7vqwf99GbFPnww5bm5b6asrKqkkBN/6SauddThm8Xbpc7q3u0pZ25aJMx7byyCClAkEd59GwGWgZXMG2KJq0HSLA69+K43eICfYcRD90HzPcxH5E/WmdqL1zDCeeIrjLGjh3OpJbw/JVkAdSiAsPND5JETf3HeYrG5zX57yIdf53OFYAtIsggFfiKpez5w1bLwtYjYBzOlXaP9sE8= vasia@vs-laptop"
+        ]
       },
       {
-        "name": "masha",
-        "status": "off",
-        "fullname": "Masha Pushkina",
+        "name": "dima",
+        "status": "on",
+        "fullname": "Dmitriy Scherbakov",
         "shell": "/usr/bin/zsh",
         "group": "sudo"
       }
@@ -28,6 +31,7 @@
     "domain": "dwbru.net",
     "ec2": false,
     "usefulPackages": [
+      "mc",
       "zsh",
       "git",
       "bash-completion",
@@ -192,15 +196,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "33599931",
-              "packets": "61206",
+              "bytes": "37463289",
+              "packets": "70447",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "33599931",
-              "packets": "61206",
+              "bytes": "37463289",
+              "packets": "70447",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -210,16 +214,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "77918771",
-              "packets": "299642",
+              "bytes": "81146057",
+              "packets": "312422",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "487442106",
-              "packets": "6661681",
+              "bytes": "511925540",
+              "packets": "7042636",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -453,13 +457,13 @@
     "filesystem": {
       "/dev/vda": {
         "kb_size": "20509308",
-        "kb_used": "2168396",
-        "kb_available": "17276056",
+        "kb_used": "2168836",
+        "kb_available": "17275616",
         "percent_used": "12%",
         "mount": "/",
         "total_inodes": "1310720",
-        "inodes_used": "112079",
-        "inodes_available": "1198641",
+        "inodes_used": "112109",
+        "inodes_available": "1198611",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -590,23 +594,23 @@
         "free": "0kB"
       },
       "total": "501824kB",
-      "free": "67312kB",
-      "buffers": "28364kB",
-      "cached": "209004kB",
-      "active": "299808kB",
-      "inactive": "70076kB",
+      "free": "53860kB",
+      "buffers": "36896kB",
+      "cached": "214664kB",
+      "active": "258840kB",
+      "inactive": "125524kB",
       "dirty": "0kB",
       "writeback": "0kB",
-      "anon_pages": "132520kB",
-      "mapped": "31168kB",
-      "slab": "49336kB",
-      "slab_reclaimable": "39816kB",
-      "slab_unreclaim": "9520kB",
-      "page_tables": "6104kB",
+      "anon_pages": "132804kB",
+      "mapped": "27076kB",
+      "slab": "48280kB",
+      "slab_reclaimable": "38748kB",
+      "slab_unreclaim": "9532kB",
+      "page_tables": "6076kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "250912kB",
-      "committed_as": "746320kB",
+      "committed_as": "746304kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "3312kB",
       "vmalloc_chunk": "34359702804kB"
@@ -1025,21 +1029,7 @@
           "gid": 27,
           "uid": 1000,
           "shell": "/bin/bash",
-          "gecos": ""
-        },
-        "masha": {
-          "dir": "/home/masha",
-          "gid": 27,
-          "uid": 1002,
-          "shell": "/usr/bin/zsh",
-          "gecos": "Masha Pushkina"
-        },
-        "misha": {
-          "dir": "/home/misha",
-          "gid": 27,
-          "uid": 1003,
-          "shell": "/usr/bin/zsh",
-          "gecos": "Misha Pachkov"
+          "gecos": "Vasiliy Sannikov"
         },
         "postfix": {
           "dir": "/var/spool/postfix",
@@ -1068,6 +1058,13 @@
           "uid": 109,
           "shell": "/bin/false",
           "gecos": "ftp daemon,,,"
+        },
+        "dima": {
+          "dir": "/home/dima",
+          "gid": 27,
+          "uid": 1001,
+          "shell": "/usr/bin/zsh",
+          "gecos": "Dmitriy Scherbakov"
         }
       },
       "group": {
@@ -1432,12 +1429,12 @@
     "machinename": "CHEF",
     "fqdn": "CHEF",
     "domain": null,
-    "uptime_seconds": 1322757,
-    "uptime": "15 days 07 hours 25 minutes 57 seconds",
-    "idletime_seconds": 1316693,
-    "idletime": "15 days 05 hours 44 minutes 53 seconds",
+    "uptime_seconds": 1404341,
+    "uptime": "16 days 06 hours 05 minutes 41 seconds",
+    "idletime_seconds": 1397765,
+    "idletime": "16 days 04 hours 16 minutes 05 seconds",
     "root_group": "root",
-    "ohai_time": 1409736495.1055264,
+    "ohai_time": 1409818079.2514281,
     "block_device": {
       "sr0": {
         "size": "2097151",

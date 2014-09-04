@@ -60,8 +60,18 @@ node['users'].each do |user|
     shell user["shell"]
     gid user["group"]
     action ( { "on" => :create, "off" => :remove }[ user["status"] ] )
+    supports :manage_home=>true
     # Maybe auth keys here
     #notifies :create, "file[#{user}]"
+  end
+
+  if user["ssh_keys"] then
+    file "/home/#{user['name']}/.ssh/authorized_keys" do
+      content user['ssh_keys'].join("\n")
+      owner "#{user['name']}"
+      mode "0644"
+      action :create
+    end
   end
 end
 
