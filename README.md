@@ -10,7 +10,7 @@ sudo gem install hub
 
 Install cheff
 ```bash
-curl -L https://www.getchef.com/chef/install.sh | sudo bash
+sudo curl -L https://www.getchef.com/chef/install.sh | sudo bash
 ```
 
 Get dwbru chef-repository
@@ -22,14 +22,17 @@ cd /var/chef-repo
 
 Copy configurations
 ```bash
-cp ./additional/configFiles/knife.rb ~/.chef/
+sudo mkdir /root/.chef/
+sudo cp ./additional/configFiles/knife.rb /root/.chef/
+
+sudo mkdir /etc/chef/
 sudo cp ./additional/configFiles/client.rb /etc/chef/
 ```
 
 Configure node
 ```bash
-cp ./nodes/node-template.json ./nodes/NEW-NODE-NAME.json
-knife node edit NEW-NODE-NAME
+sudo cp ./nodes/node-template.json ./nodes/NEW-NODE-NAME.json
+sudo knife node edit NEW-NODE-NAME
 ```
 
 Run
