@@ -37,7 +37,7 @@ sudo knife node edit NEW-NODE-NAME
 
 Run
 ```bash
-sudo chef-client
+sudo chef-client -N NEW-NODE-NAME
 ```
 
 Overview
