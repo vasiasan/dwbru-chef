@@ -1,27 +1,6 @@
 {
-  "normal": {
-    "users": [
-      {
-        "name": "vasia",
-        "status": "on",
-        "fullname": "Vasiliy Sannikov",
-        "shell": "/bin/bash",
-        "group": "sudo",
-        "ssh_keys": [
-          "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA2MO3eQ6ZuGX0kN5ndlCWXhMqiLRLXOfmsPwMb4MBvg0ktqzkGZIC4IY5PNgIktTBloKoCcNLDBq/BwnJroOyPj4X1VybjjsQKdZUAPRZOsp0YcezfD0LlyClMGdqTIWAYT52SaQ+ZG5n8MylXGXjjgbyrTsvwr+U8J6FkumZkQ/KTFXVzvJIwnR/TpkIUzHHn0JBsPmhBUwS6l2Mx1idxHXDuwuOL5ismhXD3L2QZUghCzWM4nwfQTvLJzmeefhZQOARGz3NRqhjVYx9xAo/vQJJaLuyuYLPkRtpbe0vgYSu7vTACL92zP/Ckb78Uhs0kDTQpkGqcU9Q6McdcYl+cWfAN0F4MGJMkvbI4/Zgvd+UBuQyKop//Bjk9bHo5KZyJiNOmjRcJ5H4p8YRPtqx3D+h/nusw/DRp2fs1FaGOseKclQiMKU0bjbpdRqCfYLByOhpn2KSicDZYYOCARn1q9wA0M7vqwf99GbFPnww5bm5b6asrKqkkBN/6SauddThm8Xbpc7q3u0pZ25aJMx7byyCClAkEd59GwGWgZXMG2KJq0HSLA69+K43eICfYcRD90HzPcxH5E/WmdqL1zDCeeIrjLGjh3OpJbw/JVkAdSiAsPND5JETf3HeYrG5zX57yIdf53OFYAtIsggFfiKpez5w1bLwtYjYBzOlXaP9sE8= vasia@vs-laptop"
-        ]
-      },
-      { 
-        "name": "dima",
-        "status": "on",
-        "fullname": "Dmitriy Scherbakov",
-        "shell": "/usr/bin/zsh",
-        "group": "sudo"
-      }
-    ]
-  },
+  "name": "node-template",
   "run_list": [
     "role[dwbru-host]"
   ]
 }
-

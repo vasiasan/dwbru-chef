@@ -53,22 +53,30 @@ service "ssh" do
 end
 
 # Users settings from list of node.json file
-node['users'].each do |user|
-  user user["name"] do
-    username user["name"]
+data_bag('admins').each do |login|
+  user = data_bag_item('admins', login)
+  homedir = "/home/#{login}"
+  user login do
+    home homedir
     comment user["fullname"]
     shell user["shell"]
     gid user["group"]
     action ( { "on" => :create, "off" => :remove }[ user["status"] ] )
-    supports :manage_home=>true
+    system false
+    supports :manage_home=>false
     # Maybe auth keys here
     #notifies :create, "file[#{user}]"
   end
 
-  if user["ssh_keys"] then
-    file "/home/#{user['name']}/.ssh/authorized_keys" do
+  if user['status'] == "on" && user["ssh_keys"] then
+    directory "#{homedir}/.ssh" do
+      owner login
+      mode 00600
+      recursive true
+    end
+    file "#{homedir}/.ssh/authorized_keys" do
       content user['ssh_keys'].join("\n")
-      owner "#{user['name']}"
+      owner login
       mode "0644"
       action :create
     end
