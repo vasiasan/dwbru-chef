@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 
 # Debug envs
-file "#{ENV['HOME']}/z.txt" do
-  content node.name
-end
+#file "#{ENV['HOME']}/z.txt" do
+#  content node.name
+#end
 
+#log "Hello, world!"
 
 cookbook_file "login withot password on system console OFF" do
   source "common-auth"
@@ -71,13 +72,15 @@ data_bag('admins').each do |login|
   if user['status'] == "on" && user["ssh_keys"] then
     directory "#{homedir}/.ssh" do
       owner login
-      mode 00600
+      group user["group"]
+      mode "00700"
       recursive true
     end
     file "#{homedir}/.ssh/authorized_keys" do
       content user['ssh_keys'].join("\n")
       owner login
-      mode "0644"
+      group user["group"]
+      mode "00600"
       action :create
     end
   end
@@ -167,15 +170,28 @@ ruby_block "mysqlPasswordGeneration" do
     chars = [(0..9), ('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
     randomString = (0...32).map { chars[rand(chars.length)] }.join
 
-    File.open("/root/.my.cnf", 'w') { |file| file.write("[client]\npassword=#{randomString}\n") }
-    %x( mysqladmin -u root --password="" password #{randomString} )
-    print "\n    ******************************************************************\n"
-    print "    * New mysql root user password: #{randomString} *\n"
-    print "    ******************************************************************"
+    #%x( mysqladmin -u root --password="" password #{randomString} )
+    # Changed by better
+    mysqlPass = Chef::Resource::Execute.new("mysqladmin -u root --password="" password #{randomString}", run_context)
+    mysqlPass.run_action :run
+
+    # File.open("/root/.my.cnf", 'w') { |file| file.write("[client]\npassword=#{randomString}\n") }
+    # Changed by better
+    mycnfFile = Chef::Resource::File.new("/root/.my.cnf", run_context)
+    mycnfFile.content "[client]\npassword=#{randomString}\n"
+    mycnfFile.owner "root"
+    mycnfFile.group "root"
+    mycnfFile.mode "00600"
+    mycnfFile.run_action :create
+
+    print "\n    **************************************************************\n"
+    print "    * New mysql roots password: #{randomString} *\n"
+    print "    **************************************************************\n\n"
 
   end
   action :nothing
 end
+
 
 cookbook_file "Security updates ON" do
   source "50unattended-upgrades"
@@ -213,29 +229,6 @@ cookbook_file "/etc/postfix/main.cf" do
   mode "0644"
   action :create
   notifies :reload, "service[postfix]"
-end
-
-[ "", node['fqdn']+"/logs" ].each do |path|
-  directory "/srv/www/#{path}" do
-    owner "root"
-    group "www-data"
-    mode 00750
-    recursive true
-  end
-end
-
-directory "/srv/www/#{node['fqdn']}" do
-  owner "root"
-  group "www-data"
-  mode 00770
-end
-
-%w[ htdocs conf tmp ].each do |path|
-  directory "/srv/www/#{node['fqdn']}/#{path}" do
-    owner "www-data"
-    group "www-data"
-    mode 00770
-  end
 end
 
 directory "/etc/ssl/localcerts" do
@@ -303,7 +296,97 @@ service "vsftpd" do
   action :nothing
 end
 
+service "nginx" do
+  action [ :enable, :start ]
+end
+
+service "php5-fpm" do
+  action [ :enable, :start ]
+end
+
+# http://habrahabr.ru/post/100961/
+cookbook_file "php.ini cgi.fix_pathinfo=0 fix" do
+  source "php.ini"
+  path "/etc/php5/fpm/php.ini"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  notifies :restart, "service[nginx]"
+end
+
+directory "/var/run/php5-fpm/" do
+  owner "root"
+  group "root"
+  mode "00755"
+  recursive true
+end
+
+# Create dwbru hosts dir, users and configurations for nginx and php-fpm
+node["dwbruHosts"].each do |host|
+  hostname = host["name"]
+  hostsdir = "/srv/www/"
+
+  directory "#{hostsdir}#{hostname}" do
+    owner "root"
+    group "www-data"
+    mode "00770"
+  end
+
+  user hostname do
+    gid "www-data"
+    home "#{hostsdir}#{hostname}"
+    shell "/nonexistent"
+  end
+
+  [ "", "#{hostname}/logs" ].each do |path|
+    directory "#{hostsdir}#{path}" do
+      owner "root"
+      group "www-data"
+      mode "00750"
+      recursive true
+    end
+  end
+
+  %w[ htdocs conf tmp ].each do |path|
+    directory "#{hostsdir}#{hostname}/#{path}" do
+      owner "www-data"
+      group "www-data"
+      mode "00770"
+    end
+  end
+
+  template "/etc/php5/fpm/pool.d/#{hostname}.conf" do
+    source "php5-fpm.erb"
+    owner "root"
+    group "root"
+    mode 0644
+    variables(
+      'hostname' => hostname
+    )
+    action :create
+    notifies :restart, "service[php5-fpm]"
+  end
+
+  template "/etc/nginx/sites-available/#{hostname}" do
+    source "nginx-host.erb"
+    owner "root"
+    group "root"
+    mode 0644
+    variables(
+      'hostname' => hostname
+    )
+    action :create
+    notifies :restart, "service[nginx]"
+  end
+
+  link "/etc/nginx/sites-enabled/#{hostname}" do
+    to "/etc/nginx/sites-available/#{hostname}"
+  end
+end
+
 =begin
+
 # 33 Userd for www-data in default user apache
 user "www" do
   uid 33

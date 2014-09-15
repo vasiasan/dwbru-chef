@@ -46,6 +46,16 @@
       "libapache2-mod-php5",
       "vsftpd"
     ],
+    "dwbruHosts": [
+      {
+        "name": "achinsk",
+        "status": "on"
+      },
+      {
+        "name": "krasnoyarsk",
+        "status": "on"
+      }
+    ],
     "resolver": {
       "search": "dwbru.net",
       "nameservers": [
@@ -402,15 +412,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "1271641",
-              "packets": "1966",
+              "bytes": "4078523",
+              "packets": "5115",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "1271641",
-              "packets": "1966",
+              "bytes": "4078523",
+              "packets": "5115",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -420,16 +430,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "18276274",
-              "packets": "149868",
+              "bytes": "74447247",
+              "packets": "532027",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "199136443",
-              "packets": "234104",
+              "bytes": "353954083",
+              "packets": "601007",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -551,13 +561,13 @@
     "filesystem": {
       "rootfs": {
         "kb_size": "10188088",
-        "kb_used": "1220868",
-        "kb_available": "8426652",
-        "percent_used": "13%",
+        "kb_used": "1281364",
+        "kb_available": "8366156",
+        "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "47959",
-        "inodes_available": "607401",
+        "inodes_used": "48151",
+        "inodes_available": "607209",
         "inodes_percent_used": "8%"
       },
       "udev": {
@@ -601,13 +611,13 @@
       },
       "/dev/disk/by-uuid/2795e34f-4e9b-46a9-9e39-e6cc0f1f1478": {
         "kb_size": "10188088",
-        "kb_used": "1220868",
-        "kb_available": "8426652",
-        "percent_used": "13%",
+        "kb_used": "1281364",
+        "kb_available": "8366156",
+        "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "47959",
-        "inodes_available": "607401",
+        "inodes_used": "48151",
+        "inodes_available": "607209",
         "inodes_percent_used": "8%",
         "fs_type": "ext4",
         "mount_options": [
@@ -663,31 +673,31 @@
         "free": "0kB"
       },
       "total": "3801280kB",
-      "free": "2642672kB",
-      "buffers": "102240kB",
-      "cached": "788892kB",
-      "active": "489168kB",
-      "inactive": "542168kB",
+      "free": "2527024kB",
+      "buffers": "157956kB",
+      "cached": "851952kB",
+      "active": "640416kB",
+      "inactive": "507168kB",
       "dirty": "0kB",
       "writeback": "0kB",
-      "anon_pages": "140168kB",
-      "mapped": "22328kB",
-      "slab": "88056kB",
-      "slab_reclaimable": "78772kB",
-      "slab_unreclaim": "9284kB",
-      "page_tables": "6152kB",
+      "anon_pages": "137632kB",
+      "mapped": "19208kB",
+      "slab": "94748kB",
+      "slab_reclaimable": "85788kB",
+      "slab_unreclaim": "8960kB",
+      "page_tables": "4616kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1900640kB",
-      "committed_as": "648868kB",
+      "committed_as": "541988kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "9540kB",
       "vmalloc_chunk": "34359711064kB"
     },
-    "uptime_seconds": 271158,
-    "uptime": "3 days 03 hours 19 minutes 18 seconds",
-    "idletime_seconds": 270814,
-    "idletime": "3 days 03 hours 13 minutes 34 seconds",
+    "uptime_seconds": 1063967,
+    "uptime": "12 days 07 hours 32 minutes 47 seconds",
+    "idletime_seconds": 1062788,
+    "idletime": "12 days 07 hours 13 minutes 08 seconds",
     "block_device": {
       "sda": {
         "size": "20971520",
@@ -900,7 +910,7 @@
         "ohai_root": "/opt/chef/embedded/lib/ruby/gems/1.9.1/gems/ohai-7.2.4/lib/ohai"
       }
     },
-    "ohai_time": 1409980834.0498664,
+    "ohai_time": 1410773642.8124404,
     "command": {
       "ps": "ps -ef"
     },
@@ -1094,6 +1104,27 @@
           "uid": 1003,
           "shell": "/bin/bash",
           "gecos": "Dmitriy Scherbakov"
+        },
+        "vaasya_gmail_com": {
+          "dir": "/home/vaasya_gmail_com",
+          "gid": 100,
+          "uid": 1004,
+          "shell": "/bin/bash",
+          "gecos": ""
+        },
+        "achinsk": {
+          "dir": "/srv/www/achinsk",
+          "gid": 33,
+          "uid": 1005,
+          "shell": "/nonexistent",
+          "gecos": ""
+        },
+        "krasnoyarsk": {
+          "dir": "/srv/www/krasnoyarsk",
+          "gid": 33,
+          "uid": 1006,
+          "shell": "/nonexistent",
+          "gecos": ""
         }
       },
       "group": {
@@ -1125,7 +1156,8 @@
           "gid": 4,
           "members": [
             "dimas",
-            "vasia"
+            "vasia",
+            "vaasya_gmail_com"
           ]
         },
         "tty": {
@@ -1222,7 +1254,8 @@
           "gid": 27,
           "members": [
             "dimas",
-            "vasia"
+            "vasia",
+            "vaasya_gmail_com"
           ]
         },
         "audio": {
@@ -1235,7 +1268,8 @@
           "gid": 30,
           "members": [
             "dimas",
-            "vasia"
+            "vasia",
+            "vaasya_gmail_com"
           ]
         },
         "www-data": {
@@ -1296,7 +1330,8 @@
           "gid": 44,
           "members": [
             "dimas",
-            "vasia"
+            "vasia",
+            "vaasya_gmail_com"
           ]
         },
         "sasl": {
@@ -1309,7 +1344,8 @@
           "gid": 46,
           "members": [
             "dimas",
-            "vasia"
+            "vasia",
+            "vaasya_gmail_com"
           ]
         },
         "staff": {

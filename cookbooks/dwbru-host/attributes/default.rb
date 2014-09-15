@@ -40,3 +40,14 @@ default["usefulPackages"] = [
           "libapache2-mod-php5",
           "vsftpd"
 ]
+
+default["dwbruHosts"] = [
+  {
+    "name" => "achinsk",
+    "status" => "on"
+  },
+  {
+    "name" => "krasnoyarsk",
+    "status" => "on"
+  }
+]
