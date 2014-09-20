@@ -161,7 +161,7 @@ package "mysql-server" do
 end
 
 service "mysql" do
-  action :enable
+  action [ :enable, :start ]
 end
 
 ruby_block "mysqlPasswordGeneration" do
@@ -275,6 +275,10 @@ cookbook_file "pamd-vsftpd" do
   notifies :restart, "service[vsftpd]"
 end
 
+service "vsftpd" do
+  action [ :enable, :start ]
+end
+
 group "ftpuser" do
   action :create
   members "www-data"
@@ -323,8 +327,10 @@ directory "/var/run/php5-fpm/" do
 end
 
 # Create dwbru hosts dir, users and configurations for nginx and php-fpm
-node["dwbruHosts"].each do |host|
-  hostname = host["name"]
+hostsSecret = Chef::EncryptedDataBagItem.load_secret("#{node[:dataBagSecretPath]}")
+
+data_bag('dwbru-hosts').each do |hostname|
+  host = Chef::EncryptedDataBagItem.load('dwbru-hosts', hostname, hostsSecret)
   hostsdir = "/srv/www/"
 
   directory "#{hostsdir}#{hostname}" do
@@ -337,6 +343,7 @@ node["dwbruHosts"].each do |host|
     gid "www-data"
     home "#{hostsdir}#{hostname}"
     shell "/nonexistent"
+    password host["password"]
   end
 
   [ "", "#{hostname}/logs" ].each do |path|

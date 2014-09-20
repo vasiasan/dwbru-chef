@@ -1,5 +1,7 @@
 default["domain"] = "dwbru.net"
 
+# Secret key path for decrypt databags of dwbru hosts
+default[:dataBagSecretPath] = "/root/data_bag_secret.key"
 # If used Host Used in - ec2 for specific settings.
 default["ec2"] = false
 
@@ -39,15 +41,4 @@ default["usefulPackages"] = [
           "libapache2-mod-macro",
           "libapache2-mod-php5",
           "vsftpd"
-]
-
-default["dwbruHosts"] = [
-  {
-    "name" => "achinsk",
-    "status" => "on"
-  },
-  {
-    "name" => "krasnoyarsk",
-    "status" => "on"
-  }
 ]

@@ -1,0 +1,15 @@
+{
+  "id": "krasnoyarsk",
+  "password": {
+    "encrypted_data": "88lTEYaG5+WnhrIs8dEfkitAe9+VVMs4cYCUx/enwCQaavU6qYDJHIfm6zuw\ntNR28h9jjMsS3mf6OCC7odsHyA==\n",
+    "iv": "LCtuFjrG4McMBzk5Sw02nA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "status": {
+    "encrypted_data": "Cp0YZuqHHSpVHFpF713ib2qdcrIN3Buvye7RXJdiKPE=\n",
+    "iv": "rFHoNqgXykPeu5PAp5sQ9g==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

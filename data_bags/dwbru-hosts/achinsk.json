@@ -1,0 +1,15 @@
+{
+  "id": "achinsk",
+  "password": {
+    "encrypted_data": "oA4XM9KOneVf3X2NFjdtEahGrQc7DkYv4cUS8ihaTQZbm3obxSqt2x3lm80N\nU3NXcNVWbcK1UCGE6EgEGcjKRw==\n",
+    "iv": "qiIbPW1pm8j1eAx03fmNqw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "status": {
+    "encrypted_data": "UjgOgqNS+om+Tzk01bGgBH2IjF95av2OtmuX0Q2oYQE=\n",
+    "iv": "5SY7L0QB6gtbaF470nmUmQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
