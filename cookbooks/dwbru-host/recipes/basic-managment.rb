@@ -5,6 +5,12 @@
 #  content node.name
 #end
 
+# for check attribute changed can use this hack (is unchecked)
+#last = Chef::Node.load(node.name)
+#if last.default[‘some-attribute’] != node.default[‘some-attribute’]
+    # do something
+#end
+
 #log "Hello, world!"
 
 cookbook_file "login withot password on system console OFF" do
@@ -339,12 +345,35 @@ data_bag('dwbru-hosts').each do |hostname|
     mode "00770"
   end
 
+  mysqlPassRegenFile = "#{hostsdir}#{hostname}/mysqlRemoveToRegenPass"
+
+  mysqlUserDbQuery = "CREATE DATABASE IF NOT EXISTS #{hostname};
+    CREATE USER #{hostname}@'%' IDENTIFIED BY '#{host['mysqlPass']}';
+    GRANT ALL PRIVILEGES ON #{hostname}.* TO #{hostname}@'%' WITH GRANT OPTION;"
+
+  file mysqlPassRegenFile do
+    owner hostname
+    mode "00600"
+    action :nothing
+  end
+
+  execute 'mysql create user pass and database' do
+    command "mysql --batch --silent << END\n\n #{mysqlUserDbQuery} \n\nEND"
+    not_if { File.exists?(mysqlPassRegenFile) }
+    notifies :create, "file[#{mysqlPassRegenFile}]"
+  end
+
   user hostname do
     gid "www-data"
     home "#{hostsdir}#{hostname}"
     shell "/nonexistent"
     password host["password"]
   end
+
+#  execute "echo #{hostname}:#{randomString} | chpasswd -c SHA512" do
+#    action :run
+#  end
+
 
   [ "", "#{hostname}/logs" ].each do |path|
     directory "#{hostsdir}#{path}" do

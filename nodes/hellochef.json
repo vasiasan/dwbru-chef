@@ -47,16 +47,6 @@
       "libapache2-mod-php5",
       "vsftpd"
     ],
-    "dwbruHosts": [
-      {
-        "name": "achinsk",
-        "status": "on"
-      },
-      {
-        "name": "krasnoyarsk",
-        "status": "on"
-      }
-    ],
     "resolver": {
       "search": "dwbru.net",
       "nameservers": [
@@ -413,15 +403,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "167170",
-              "packets": "417",
+              "bytes": "1035535",
+              "packets": "1811",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "167170",
-              "packets": "417",
+              "bytes": "1035535",
+              "packets": "1811",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -431,16 +421,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "3070012",
-              "packets": "12065",
+              "bytes": "116834282",
+              "packets": "666551",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "2213544",
-              "packets": "15733",
+              "bytes": "147221941",
+              "packets": "627068",
               "errors": "0",
               "drop": "1",
               "overrun": "0"
@@ -562,13 +552,13 @@
     "filesystem": {
       "rootfs": {
         "kb_size": "10188088",
-        "kb_used": "1342384",
-        "kb_available": "8305136",
+        "kb_used": "1338508",
+        "kb_available": "8309012",
         "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48716",
-        "inodes_available": "606644",
+        "inodes_used": "48773",
+        "inodes_available": "606587",
         "inodes_percent_used": "8%"
       },
       "udev": {
@@ -612,13 +602,13 @@
       },
       "/dev/disk/by-uuid/2795e34f-4e9b-46a9-9e39-e6cc0f1f1478": {
         "kb_size": "10188088",
-        "kb_used": "1342384",
-        "kb_available": "8305136",
+        "kb_used": "1338508",
+        "kb_available": "8309012",
         "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48716",
-        "inodes_available": "606644",
+        "inodes_used": "48773",
+        "inodes_available": "606587",
         "inodes_percent_used": "8%",
         "fs_type": "ext4",
         "mount_options": [
@@ -674,119 +664,31 @@
         "free": "0kB"
       },
       "total": "3801272kB",
-      "free": "3350776kB",
-      "buffers": "19976kB",
-      "cached": "242132kB",
-      "active": "296140kB",
-      "inactive": "98800kB",
+      "free": "3187840kB",
+      "buffers": "144592kB",
+      "cached": "254336kB",
+      "active": "421640kB",
+      "inactive": "117084kB",
       "dirty": "76kB",
       "writeback": "0kB",
-      "anon_pages": "132828kB",
-      "mapped": "18508kB",
-      "slab": "23476kB",
-      "slab_reclaimable": "15944kB",
-      "slab_unreclaim": "7532kB",
-      "page_tables": "3996kB",
+      "anon_pages": "139804kB",
+      "mapped": "19640kB",
+      "slab": "36936kB",
+      "slab_reclaimable": "29088kB",
+      "slab_unreclaim": "7848kB",
+      "page_tables": "4756kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1900636kB",
-      "committed_as": "496720kB",
+      "committed_as": "544496kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "9540kB",
-      "vmalloc_chunk": "34359715096kB"
+      "vmalloc_chunk": "34359713320kB"
     },
-    "uptime_seconds": 9209,
-    "uptime": "2 hours 33 minutes 29 seconds",
-    "idletime_seconds": 9145,
-    "idletime": "2 hours 32 minutes 25 seconds",
-    "gce": {
-      "instance": {
-        "attributes": {
-          "sshKeys": "vaasya_gmail_com:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBFCJkJEa2+VU+SB2upGPyU3W6k0J36FPbvvsNuVpClDThOpvqVclZpi2DoGAKKkciqFTqx3F8Kk+49VWp1bgPmsmxUJZg/3WpJj0lfkArgdm0sdHM8pqCNesIqwERhu+C4u8w0mPxFRh1VISoyfj2dbSQrrWQczvpAD8h9gQHBu6xaDK+X3sI2W6t1eHzcnzfYp6rI0e4I7MuSwPpt1ZTAFN1y2LIWkvAzdsbfgmPHEyA3+DtDdkmx4H4GWIx37Nw7svzDxefvEbXQHC3fAEkWmnYyhdY/SjaWRLG+8bH19F4/SNwYyHhUhaPX6R3oLx5fd/XUAP6D78Bqs5wtV+h google-ssh {\"userName\":\"vaasya@gmail.com\",\"expireOn\":\"2014-09-08T06:09:01+0000\"}\nvaasya_gmail_com:ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJg94t7oXkou6xXupSchubjY4NewNCngpASLRIrUT1Ft/W/diwE8BbnPq+0rnQSHlx8N6MRa2pmzIjMShh0meQk= google-ssh {\"userName\":\"vaasya@gmail.com\",\"expireOn\":\"2014-09-08T06:08:58+0000\"}\ndimas:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC99/tx74xDtHEUCrddir0+yQyk6Joiu/mgXjFzC8kqGPCc9ZYpjgToMnIzw0COEuGI2ESvVjT1UxFIB8VaI858HckRbwRgdh344UzqyoBVe4UgmCGMJD961wXiRjHBP42J1HP0Wc7rOEaJ513xwNf9CI5NLw+BzSM11dDFWk2JXEqlXRKpN34DSeSV0mfdOkoNfKKJnSvkX5oBumig+ZMYrQ9tU4/OH38Je8/5fcJB0/V4+71ymh+icQrPUOTSA+yC/ajbfi96x8GsBikgicnQzZQeCfxGeU1b+2MjCUv7D9ywzBEayWPzbBq53d4+OB4urEt6S5U8Vg+YS9ojN/AB dimas\nvasia:ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA2MO3eQ6ZuGX0kN5ndlCWXhMqiLRLXOfmsPwMb4MBvg0ktqzkGZIC4IY5PNgIktTBloKoCcNLDBq/BwnJroOyPj4X1VybjjsQKdZUAPRZOsp0YcezfD0LlyClMGdqTIWAYT52SaQ+ZG5n8MylXGXjjgbyrTsvwr+U8J6FkumZkQ/KTFXVzvJIwnR/TpkIUzHHn0JBsPmhBUwS6l2Mx1idxHXDuwuOL5ismhXD3L2QZUghCzWM4nwfQTvLJzmeefhZQOARGz3NRqhjVYx9xAo/vQJJaLuyuYLPkRtpbe0vgYSu7vTACL92zP/Ckb78Uhs0kDTQpkGqcU9Q6McdcYl+cWfAN0F4MGJMkvbI4/Zgvd+UBuQyKop//Bjk9bHo5KZyJiNOmjRcJ5H4p8YRPtqx3D+h/nusw/DRp2fs1FaGOseKclQiMKU0bjbpdRqCfYLByOhpn2KSicDZYYOCARn1q9wA0M7vqwf99GbFPnww5bm5b6asrKqkkBN/6SauddThm8Xbpc7q3u0pZ25aJMx7byyCClAkEd59GwGWgZXMG2KJq0HSLA69+K43eICfYcRD90HzPcxH5E/WmdqL1zDCeeIrjLGjh3OpJbw/JVkAdSiAsPND5JETf3HeYrG5zX57yIdf53OFYAtIsggFfiKpez5w1bLwtYjYBzOlXaP9sE8= vasia\n"
-        },
-        "description": "",
-        "disks": [
-          {
-            "deviceName": "hellochef",
-            "index": 0,
-            "mode": "READ_WRITE",
-            "type": "PERSISTENT"
-          }
-        ],
-        "hostname": "hellochef.c.dwbru-hosting-1.internal",
-        "id": 17608905910506060505,
-        "image": "",
-        "machineType": "projects/374541468912/machineTypes/n1-standard-1",
-        "maintenanceEvent": "NONE",
-        "networkInterfaces": [
-          {
-            "accessConfigs": [
-              {
-                "externalIp": "130.211.108.167",
-                "type": "ONE_TO_ONE_NAT"
-              }
-            ],
-            "forwardedIps": [
-
-            ],
-            "ip": "10.240.192.171",
-            "network": "projects/374541468912/networks/default"
-          }
-        ],
-        "scheduling": {
-          "automaticRestart": "TRUE",
-          "onHostMaintenance": "MIGRATE"
-        },
-        "serviceAccounts": {
-          "374541468912-o1sdose0cl4n1a4m2jkoknbgf8a67tvl@developer.gserviceaccount.com": {
-            "aliases": [
-              "default"
-            ],
-            "email": "374541468912-o1sdose0cl4n1a4m2jkoknbgf8a67tvl@developer.gserviceaccount.com",
-            "scopes": [
-              "https://www.googleapis.com/auth/devstorage.read_only"
-            ]
-          },
-          "default": {
-            "aliases": [
-              "default"
-            ],
-            "email": "374541468912-o1sdose0cl4n1a4m2jkoknbgf8a67tvl@developer.gserviceaccount.com",
-            "scopes": [
-              "https://www.googleapis.com/auth/devstorage.read_only"
-            ]
-          }
-        },
-        "tags": [
-          "http-server",
-          "https-server"
-        ],
-        "zone": "projects/374541468912/zones/europe-west1-a"
-      },
-      "project": {
-        "attributes": {
-        },
-        "numericProjectId": 374541468912,
-        "projectId": "dwbru-hosting-1"
-      }
-    },
-    "cloud": {
-      "public_ips": [
-        "130.211.108.167"
-      ],
-      "private_ips": [
-        "10.240.192.171"
-      ],
-      "public_ipv4": [
-        "130.211.108.167"
-      ],
-      "local_ipv4": [
-        "10.240.192.171"
-      ],
-      "public_hostname": null,
-      "local_hostname": "hellochef.c.dwbru-hosting-1.internal",
-      "provider": "gce"
-    },
+    "uptime_seconds": 897682,
+    "uptime": "10 days 09 hours 21 minutes 22 seconds",
+    "idletime_seconds": 896418,
+    "idletime": "10 days 09 hours 00 minutes 18 seconds",
     "block_device": {
       "sda": {
         "size": "20971520",
@@ -798,18 +700,7 @@
         "vendor": "Google"
       }
     },
-    "cloud_v2": {
-      "public_ipv4_addrs": [
-        "130.211.108.167"
-      ],
-      "local_ipv4_addrs": [
-        "10.240.192.171"
-      ],
-      "provider": "gce",
-      "local_hostname": "hellochef.c.dwbru-hosting-1.internal",
-      "public_ipv4": "130.211.108.167",
-      "local_ipv4": "10.240.192.171"
-    },
+    "cloud_v2": null,
     "keys": {
       "ssh": {
         "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC21uuANCp7DoXdkugEe2f9j08YlrZybdrV59u55Dg/SE404X7Zl12N/snIW4vz2WNypPb5mHZwgB2N2iQw3gleSJ00N7/oK8jYYtsMEa+EsjLscxhoRNwoXdzkoqbz83qw+kELbTRFPNsWzVQ6/AfLNwuT+y9ZUwz34IiUNb0GdKFp26S+Wvhyfv8CfhjrthwxkI/DUZzbpMziFuKUgX9bpu2gTjVLwmRwidhrvgFhFlfq8vERCA4PBnyNzOJEzxyoDwulZfaOKKGMPcfOqB/L7yx+knu9UC7sEImzicY2t7znVvPI3UpgDRVaUJoBO/Nf1011eSnvamTz4ZG30eFz",
@@ -1010,7 +901,7 @@
         "ohai_root": "/opt/chef/embedded/lib/ruby/gems/1.9.1/gems/ohai-7.2.4/lib/ohai"
       }
     },
-    "ohai_time": 1411205170.041474,
+    "ohai_time": 1412093645.0366862,
     "command": {
       "ps": "ps -ef"
     },
