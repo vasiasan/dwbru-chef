@@ -1,20 +1,20 @@
 {
   "id": "achinsk",
   "password": {
-    "encrypted_data": "DCpQwTKH+bE2Gu0PxGHz89GNSrmLo5aR80gBsTAI3Ge1rbn00rjVLad2Mc7R\n+E+zy+szObvem+leVVnmxKraAg==\n",
-    "iv": "TpvLBe0B7iBFvikSI1gNRQ==\n",
+    "encrypted_data": "2NFlHyLi6mH/t1vM3YrWEW4xFBhIGi4GElsYeQMi+t6aIkCUnVMw8vWOV8/R\nP7SyC+qYCpsPTBfCGqHrtaMRDw==\n",
+    "iv": "0SZhK2vOPVae1zmwkjO2Gg==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "mysqlPass": {
-    "encrypted_data": "k8a451Qp5m1TUA5FHvXMEn7pmQ68xv3G2on75MtsAEA=\n",
-    "iv": "5QLHrgH/woiJf0NKXjy8yQ==\n",
+    "encrypted_data": "aa/WG84SqO0k96KDwxdjVMfL9kWpYmKWwZpd+ZEdgNI=\n",
+    "iv": "v9/MzdkRzSXZTy5q2UK1Pg==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "status": {
-    "encrypted_data": "tZOHsXsEKwYfnryep0kC2YzCs1pucsXcZtyxl4tMAp8=\n",
-    "iv": "5YNOas+iBOCbaXU54bbe/A==\n",
+    "encrypted_data": "IFdw32WCE4tMKMRRi3BL+vjkWPij598QG66C/XUy7F4=\n",
+    "iv": "e59Ms0b0YUPA68rszaevlA==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   }

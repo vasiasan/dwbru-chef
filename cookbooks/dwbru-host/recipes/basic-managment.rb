@@ -13,6 +13,10 @@
 
 #log "Hello, world!"
 
+# Require for mysql password hash check and for idempotence execute sql query
+require 'digest/md5'
+  digest = Digest::MD5.hexdigest("Hello World\n")
+
 cookbook_file "login withot password on system console OFF" do
   source "common-auth"
   path "/etc/pam.d/common-auth"
@@ -339,28 +343,29 @@ data_bag('dwbru-hosts').each do |hostname|
   host = Chef::EncryptedDataBagItem.load('dwbru-hosts', hostname, hostsSecret)
   hostsdir = "/srv/www/"
 
+  mysqlPassRegenFile = "#{hostsdir}#{hostname}/MysqlPasswordRegen"
+
   directory "#{hostsdir}#{hostname}" do
     owner "root"
     group "www-data"
     mode "00770"
   end
 
-  mysqlPassRegenFile = "#{hostsdir}#{hostname}/mysqlRemoveToRegenPass"
-
-  mysqlUserDbQuery = "CREATE DATABASE IF NOT EXISTS #{hostname};
-    CREATE USER #{hostname}@'%' IDENTIFIED BY '#{host['mysqlPass']}';
-    GRANT ALL PRIVILEGES ON #{hostname}.* TO #{hostname}@'%' WITH GRANT OPTION;"
-
   file mysqlPassRegenFile do
-    owner hostname
-    mode "00600"
+    content Digest::SHA512.hexdigest( host['mysqlPass'] )
+    owner "root"
+    group "root"
+    mode "0600"
     action :nothing
   end
 
+  mysqlUserDbQuery = "CREATE DATABASE IF NOT EXISTS #{hostname};
+    GRANT ALL PRIVILEGES ON #{hostname}.* TO #{hostname}@'%' IDENTIFIED BY '#{host['mysqlPass']}' WITH GRANT OPTION;"
+
   execute 'mysql create user pass and database' do
     command "mysql --batch --silent << END\n\n #{mysqlUserDbQuery} \n\nEND"
-    not_if { File.exists?(mysqlPassRegenFile) }
     notifies :create, "file[#{mysqlPassRegenFile}]"
+    not_if { ::File.open(mysqlPassRegenFile, "rb").read == Digest::SHA512.hexdigest( host['mysqlPass'] ) }
   end
 
   user hostname do
