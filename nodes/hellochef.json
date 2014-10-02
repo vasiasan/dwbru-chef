@@ -403,15 +403,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "1035535",
-              "packets": "1811",
+              "bytes": "3050652",
+              "packets": "4519",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "1035535",
-              "packets": "1811",
+              "bytes": "3050652",
+              "packets": "4519",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -421,16 +421,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "116834282",
-              "packets": "666551",
+              "bytes": "126534447",
+              "packets": "737029",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "147221941",
-              "packets": "627068",
+              "bytes": "165294241",
+              "packets": "690643",
               "errors": "0",
               "drop": "1",
               "overrun": "0"
@@ -552,13 +552,13 @@
     "filesystem": {
       "rootfs": {
         "kb_size": "10188088",
-        "kb_used": "1338508",
-        "kb_available": "8309012",
+        "kb_used": "1339020",
+        "kb_available": "8308500",
         "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48773",
-        "inodes_available": "606587",
+        "inodes_used": "48814",
+        "inodes_available": "606546",
         "inodes_percent_used": "8%"
       },
       "udev": {
@@ -602,13 +602,13 @@
       },
       "/dev/disk/by-uuid/2795e34f-4e9b-46a9-9e39-e6cc0f1f1478": {
         "kb_size": "10188088",
-        "kb_used": "1338508",
-        "kb_available": "8309012",
+        "kb_used": "1339020",
+        "kb_available": "8308500",
         "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48773",
-        "inodes_available": "606587",
+        "inodes_used": "48814",
+        "inodes_available": "606546",
         "inodes_percent_used": "8%",
         "fs_type": "ext4",
         "mount_options": [
@@ -664,31 +664,31 @@
         "free": "0kB"
       },
       "total": "3801272kB",
-      "free": "3187840kB",
-      "buffers": "144592kB",
-      "cached": "254336kB",
-      "active": "421640kB",
-      "inactive": "117084kB",
-      "dirty": "76kB",
+      "free": "3179192kB",
+      "buffers": "149028kB",
+      "cached": "254808kB",
+      "active": "436052kB",
+      "inactive": "107628kB",
+      "dirty": "216kB",
       "writeback": "0kB",
-      "anon_pages": "139804kB",
+      "anon_pages": "139840kB",
       "mapped": "19640kB",
-      "slab": "36936kB",
-      "slab_reclaimable": "29088kB",
-      "slab_unreclaim": "7848kB",
+      "slab": "37536kB",
+      "slab_reclaimable": "29648kB",
+      "slab_unreclaim": "7888kB",
       "page_tables": "4756kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1900636kB",
-      "committed_as": "544496kB",
+      "committed_as": "544584kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "9540kB",
-      "vmalloc_chunk": "34359713320kB"
+      "vmalloc_chunk": "34359712696kB"
     },
-    "uptime_seconds": 897682,
-    "uptime": "10 days 09 hours 21 minutes 22 seconds",
-    "idletime_seconds": 896418,
-    "idletime": "10 days 09 hours 00 minutes 18 seconds",
+    "uptime_seconds": 1069088,
+    "uptime": "12 days 08 hours 58 minutes 08 seconds",
+    "idletime_seconds": 1067553,
+    "idletime": "12 days 08 hours 32 minutes 33 seconds",
     "block_device": {
       "sda": {
         "size": "20971520",
@@ -901,7 +901,7 @@
         "ohai_root": "/opt/chef/embedded/lib/ruby/gems/1.9.1/gems/ohai-7.2.4/lib/ohai"
       }
     },
-    "ohai_time": 1412093645.0366862,
+    "ohai_time": 1412265050.5645318,
     "command": {
       "ps": "ps -ef"
     },
