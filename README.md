@@ -61,11 +61,35 @@ sudo knife data bag create dwbru-hosts achinsk --secret-file ~/data_bag_secret.k
 
 Run
 ```bash
-sudo chef-client -N NEW-NODE-NAME
+sudo chef-client
 ```
 
-Basic elements
-==============
+Admin add
+===========
+
+Creating a host in an encrypted data bag.
+```
+sudo knife data bag create admins vasia
+{
+    "id": "vasia",
+    "name": "vasia",
+    "status": "on",
+    "fullname": "Vasiliy Sannikov",
+    "shell": "/bin/bash",
+    "group": "sudo",
+    "ssh_keys": [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA2MO3eQ6ZuGX0kN5ndlCWXhMqiLRLXOfmsPwMb4MBvg0ktqzkGZIC4IY5PNgIktTBloKoCcNLDBq/BwnJroOyPj4X1VybjjsQKdZUAPRZOsp0YcezfD0LlyClMGdqTIWAYT52SaQ+$
+    ]
+  }
+```
+
+Run
+```bash
+sudo chef-client
+```
+
+Big elements in code
+====================
 [Admin creation](https://github.com/dwbru/chef-repo/blob/master/cookbooks/dwbru-host/recipes/basic-managment.rb#L66-97)
 
 [Mysql root password generation](https://github.com/dwbru/chef-repo/blob/master/cookbooks/dwbru-host/recipes/basic-managment.rb#L177-203)
