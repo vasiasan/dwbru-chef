@@ -8,4 +8,5 @@ auth	required	pam_listfile.so item=user sense=deny file=/etc/ftpusers onerr=succ
 @include common-session
 @include common-auth
 #auth	required	pam_shells.so
-auth    required        pam_succeed_if.so quiet user ingroup ftpuser
+# Commented by Vasia
+#auth    required        pam_succeed_if.so quiet user ingroup ftpuser
