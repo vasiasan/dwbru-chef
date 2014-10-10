@@ -403,15 +403,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "3050652",
-              "packets": "4519",
+              "bytes": "3469201",
+              "packets": "5489",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "3050652",
-              "packets": "4519",
+              "bytes": "3469201",
+              "packets": "5489",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -421,16 +421,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "126534447",
-              "packets": "737029",
+              "bytes": "169187894",
+              "packets": "1030537",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "165294241",
-              "packets": "690643",
+              "bytes": "277876049",
+              "packets": "967493",
               "errors": "0",
               "drop": "1",
               "overrun": "0"
@@ -552,13 +552,13 @@
     "filesystem": {
       "rootfs": {
         "kb_size": "10188088",
-        "kb_used": "1339020",
-        "kb_available": "8308500",
+        "kb_used": "1343900",
+        "kb_available": "8303620",
         "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48814",
-        "inodes_available": "606546",
+        "inodes_used": "48845",
+        "inodes_available": "606515",
         "inodes_percent_used": "8%"
       },
       "udev": {
@@ -602,13 +602,13 @@
       },
       "/dev/disk/by-uuid/2795e34f-4e9b-46a9-9e39-e6cc0f1f1478": {
         "kb_size": "10188088",
-        "kb_used": "1339020",
-        "kb_available": "8308500",
+        "kb_used": "1343900",
+        "kb_available": "8303620",
         "percent_used": "14%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48814",
-        "inodes_available": "606546",
+        "inodes_used": "48845",
+        "inodes_available": "606515",
         "inodes_percent_used": "8%",
         "fs_type": "ext4",
         "mount_options": [
@@ -664,31 +664,31 @@
         "free": "0kB"
       },
       "total": "3801272kB",
-      "free": "3179192kB",
-      "buffers": "149028kB",
-      "cached": "254808kB",
-      "active": "436052kB",
-      "inactive": "107628kB",
-      "dirty": "216kB",
+      "free": "3021316kB",
+      "buffers": "155596kB",
+      "cached": "409548kB",
+      "active": "579972kB",
+      "inactive": "122452kB",
+      "dirty": "72kB",
       "writeback": "0kB",
-      "anon_pages": "139840kB",
-      "mapped": "19640kB",
-      "slab": "37536kB",
-      "slab_reclaimable": "29648kB",
-      "slab_unreclaim": "7888kB",
-      "page_tables": "4756kB",
+      "anon_pages": "137280kB",
+      "mapped": "19672kB",
+      "slab": "44184kB",
+      "slab_reclaimable": "36180kB",
+      "slab_unreclaim": "8004kB",
+      "page_tables": "4736kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1900636kB",
-      "committed_as": "544584kB",
+      "committed_as": "542188kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "9540kB",
-      "vmalloc_chunk": "34359712696kB"
+      "vmalloc_chunk": "34359711496kB"
     },
-    "uptime_seconds": 1069088,
-    "uptime": "12 days 08 hours 58 minutes 08 seconds",
-    "idletime_seconds": 1067553,
-    "idletime": "12 days 08 hours 32 minutes 33 seconds",
+    "uptime_seconds": 1709565,
+    "uptime": "19 days 18 hours 52 minutes 45 seconds",
+    "idletime_seconds": 1707277,
+    "idletime": "19 days 18 hours 14 minutes 37 seconds",
     "block_device": {
       "sda": {
         "size": "20971520",
@@ -901,7 +901,7 @@
         "ohai_root": "/opt/chef/embedded/lib/ruby/gems/1.9.1/gems/ohai-7.2.4/lib/ohai"
       }
     },
-    "ohai_time": 1412265050.5645318,
+    "ohai_time": 1412905527.4228654,
     "command": {
       "ps": "ps -ef"
     },

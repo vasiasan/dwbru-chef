@@ -345,10 +345,11 @@ data_bag('dwbru-hosts').each do |hostname|
 
   mysqlPassRegenFile = "#{hostsdir}#{hostname}/MysqlPasswordRegen"
 
+  # Use 750 rights from 5 solution of there http://agapoff.name/vsftpd-oops.html
   directory "#{hostsdir}#{hostname}" do
     owner "root"
     group "www-data"
-    mode "00770"
+    mode "00750"
   end
 
   file mysqlPassRegenFile do
