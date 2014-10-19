@@ -265,29 +265,30 @@ cookbook_file "Logrotate apache hosts" do
   action :create
 end
 
-cookbook_file "vsftpd.conf" do
-  source "vsftpd.conf"
-  path "/etc/vsftpd.conf"
-  owner "root"
-  group "root"
-  mode "0644"
-  action :create
-  notifies :restart, "service[vsftpd]"
-end
+#replace to sftp
+#cookbook_file "vsftpd.conf" do
+#  source "vsftpd.conf"
+#  path "/etc/vsftpd.conf"
+#  owner "root"
+#  group "root"
+#  mode "0644"
+#  action :create
+#  notifies :restart, "service[vsftpd]"
+#end
 
-cookbook_file "pamd-vsftpd" do
-  source "pamd-vsftpd"
-  path "/etc/pam.d/vsftpd"
-  owner "root"
-  group "root"
-  mode "0644"
-  action :create
-  notifies :restart, "service[vsftpd]"
-end
+#cookbook_file "pamd-vsftpd" do
+#  source "pamd-vsftpd"
+#  path "/etc/pam.d/vsftpd"
+#  owner "root"
+#  group "root"
+#  mode "0644"
+#  action :create
+#  notifies :restart, "service[vsftpd]"
+#end
 
-service "vsftpd" do
-  action [ :enable, :start ]
-end
+#service "vsftpd" do
+#  action [ :enable, :start ]
+#end
 
 group "ftpuser" do
   action :create
@@ -303,10 +304,6 @@ execute "newaliases" do
 end
 
 service "postfix" do
-  action :nothing
-end
-
-service "vsftpd" do
   action :nothing
 end
 
@@ -341,7 +338,7 @@ hostsSecret = Chef::EncryptedDataBagItem.load_secret("#{node[:dataBagSecretPath]
 
 data_bag('dwbru-hosts').each do |hostname|
   host = Chef::EncryptedDataBagItem.load('dwbru-hosts', hostname, hostsSecret)
-  hostsdir = "/srv/www/"
+  hostsdir = "/srv/available/"
 
   mysqlPassRegenFile = "#{hostsdir}#{hostname}/MysqlPasswordRegen"
 
@@ -349,7 +346,7 @@ data_bag('dwbru-hosts').each do |hostname|
   directory "#{hostsdir}#{hostname}" do
     owner "root"
     group "www-data"
-    mode "00750"
+    mode "00770"
   end
 
   file mysqlPassRegenFile do
@@ -373,7 +370,8 @@ data_bag('dwbru-hosts').each do |hostname|
     gid "www-data"
     home "#{hostsdir}#{hostname}"
     shell "/nonexistent"
-    password host["password"]
+    password ""
+    action [ :create, :lock ]
   end
 
 #  execute "echo #{hostname}:#{randomString} | chpasswd -c SHA512" do
@@ -422,8 +420,16 @@ data_bag('dwbru-hosts').each do |hostname|
     notifies :restart, "service[nginx]"
   end
 
+  onOffTranslate = { "on" => :create, "off" => :delete }
+
+  link "/srv/www/#{hostname}" do
+    to "#{hostsdir}#{hostname}"
+    action onOffTranslate[ host['status'] ]
+  end
+
   link "/etc/nginx/sites-enabled/#{hostname}" do
     to "/etc/nginx/sites-available/#{hostname}"
+    action onOffTranslate[ host['status'] ]
   end
 end
 

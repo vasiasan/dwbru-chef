@@ -1,20 +1,20 @@
 {
   "id": "krasnoyarsk",
   "password": {
-    "encrypted_data": "1SyTsZx4wIQzJV3tMg929aZmecYeiCn5qBM2iU/x8FneUKaLvkuDFkgCPTFm\nFqS0A0sWsukcwDQhj9DkwT4JSg==\n",
-    "iv": "ZtNU8WvwPvG+BYyu5ECjYA==\n",
+    "encrypted_data": "TV1T7NJE4+Sk/TRgzbp23CEYmgEkm9WgUM5mRTHhISG+pzW0CxtD6gXuVqQ2\nCgJEGDeCbiGndTUatPujf/NQBg==\n",
+    "iv": "4oo5jymrVvqM01UrfBTuBw==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "mysqlPass": {
-    "encrypted_data": "LwICUHg5twkAGkcVe9RzwG1rhUiKKkZpak1SEWRsmes=\n",
-    "iv": "zCCsYeu2jv9n7T2ozddQkA==\n",
+    "encrypted_data": "NOgAY1HdroMWMlAXop2T/nMwIDaOq+qE3i8stkrX5xo=\n",
+    "iv": "yPXXmD8Mw07nvhyoaWo2Tw==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "status": {
-    "encrypted_data": "gZm5qdfxMtRcZAVMcZ7KoqVymSWd0F1II8Qnv+WYxYI=\n",
-    "iv": "3lCDHrXQUPMGTXgHhqf05Q==\n",
+    "encrypted_data": "K48tqBvXx9low5iV+VBnENaOCwj1V0Dweo3tZd2Up2k=\n",
+    "iv": "AE71bVsVSrC2dWAWshtT8g==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   }
