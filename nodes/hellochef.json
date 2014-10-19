@@ -98,17 +98,29 @@
       "machine": "x86_64",
       "os": "GNU/Linux",
       "modules": {
+        "iptable_mangle": {
+          "size": "12536",
+          "refcount": "0"
+        },
+        "iptable_nat": {
+          "size": "12646",
+          "refcount": "0"
+        },
+        "nf_nat_ipv4": {
+          "size": "12912",
+          "refcount": "1"
+        },
         "xt_hl": {
           "size": "12449",
-          "refcount": "6"
+          "refcount": "0"
         },
         "ip6t_rt": {
           "size": "12456",
-          "refcount": "3"
+          "refcount": "0"
         },
         "nf_conntrack_ipv6": {
           "size": "13605",
-          "refcount": "7"
+          "refcount": "0"
         },
         "nf_defrag_ipv6": {
           "size": "33358",
@@ -116,31 +128,31 @@
         },
         "ipt_REJECT": {
           "size": "12465",
-          "refcount": "1"
+          "refcount": "0"
         },
         "xt_LOG": {
           "size": "17179",
-          "refcount": "9"
+          "refcount": "0"
         },
         "xt_multiport": {
           "size": "12518",
-          "refcount": "2"
+          "refcount": "0"
         },
         "xt_limit": {
           "size": "12601",
-          "refcount": "12"
+          "refcount": "0"
         },
         "xt_tcpudp": {
           "size": "12527",
-          "refcount": "34"
+          "refcount": "0"
         },
         "xt_addrtype": {
           "size": "12557",
-          "refcount": "4"
+          "refcount": "0"
         },
         "nf_conntrack_ipv4": {
           "size": "18412",
-          "refcount": "7"
+          "refcount": "1"
         },
         "nf_defrag_ipv4": {
           "size": "12483",
@@ -148,7 +160,7 @@
         },
         "xt_state": {
           "size": "12503",
-          "refcount": "14"
+          "refcount": "0"
         },
         "ip6table_filter": {
           "size": "12540",
@@ -172,7 +184,7 @@
         },
         "nf_nat": {
           "size": "18117",
-          "refcount": "1"
+          "refcount": "3"
         },
         "nf_conntrack_ftp": {
           "size": "16783",
@@ -180,19 +192,19 @@
         },
         "nf_conntrack": {
           "size": "83121",
-          "refcount": "8"
+          "refcount": "10"
         },
         "iptable_filter": {
           "size": "12536",
-          "refcount": "1"
+          "refcount": "0"
         },
         "ip_tables": {
           "size": "25967",
-          "refcount": "1"
+          "refcount": "3"
         },
         "x_tables": {
           "size": "23016",
-          "refcount": "13"
+          "refcount": "14"
         },
         "crct10dif_pclmul": {
           "size": "13348",
@@ -403,15 +415,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "3469201",
-              "packets": "5489",
+              "bytes": "4357308",
+              "packets": "7097",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "3469201",
-              "packets": "5489",
+              "bytes": "4357308",
+              "packets": "7097",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -421,16 +433,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "169187894",
-              "packets": "1030537",
+              "bytes": "319652884",
+              "packets": "1537486",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "277876049",
-              "packets": "967493",
+              "bytes": "420176796",
+              "packets": "1457111",
               "errors": "0",
               "drop": "1",
               "overrun": "0"
@@ -552,13 +564,13 @@
     "filesystem": {
       "rootfs": {
         "kb_size": "10188088",
-        "kb_used": "1343900",
-        "kb_available": "8303620",
-        "percent_used": "14%",
+        "kb_used": "1351456",
+        "kb_available": "8296064",
+        "percent_used": "15%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48845",
-        "inodes_available": "606515",
+        "inodes_used": "49237",
+        "inodes_available": "606123",
         "inodes_percent_used": "8%"
       },
       "udev": {
@@ -602,13 +614,13 @@
       },
       "/dev/disk/by-uuid/2795e34f-4e9b-46a9-9e39-e6cc0f1f1478": {
         "kb_size": "10188088",
-        "kb_used": "1343900",
-        "kb_available": "8303620",
-        "percent_used": "14%",
+        "kb_used": "1351456",
+        "kb_available": "8296064",
+        "percent_used": "15%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "48845",
-        "inodes_available": "606515",
+        "inodes_used": "49237",
+        "inodes_available": "606123",
         "inodes_percent_used": "8%",
         "fs_type": "ext4",
         "mount_options": [
@@ -664,31 +676,31 @@
         "free": "0kB"
       },
       "total": "3801272kB",
-      "free": "3021316kB",
-      "buffers": "155596kB",
-      "cached": "409548kB",
-      "active": "579972kB",
-      "inactive": "122452kB",
-      "dirty": "72kB",
+      "free": "2994240kB",
+      "buffers": "157448kB",
+      "cached": "422176kB",
+      "active": "622084kB",
+      "inactive": "104396kB",
+      "dirty": "76kB",
       "writeback": "0kB",
-      "anon_pages": "137280kB",
-      "mapped": "19672kB",
-      "slab": "44184kB",
-      "slab_reclaimable": "36180kB",
-      "slab_unreclaim": "8004kB",
-      "page_tables": "4736kB",
+      "anon_pages": "146856kB",
+      "mapped": "19840kB",
+      "slab": "46964kB",
+      "slab_reclaimable": "38924kB",
+      "slab_unreclaim": "8040kB",
+      "page_tables": "4840kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1900636kB",
-      "committed_as": "542188kB",
+      "committed_as": "551660kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "9540kB",
-      "vmalloc_chunk": "34359711496kB"
+      "vmalloc_used": "9492kB",
+      "vmalloc_chunk": "34359702528kB"
     },
-    "uptime_seconds": 1709565,
-    "uptime": "19 days 18 hours 52 minutes 45 seconds",
-    "idletime_seconds": 1707277,
-    "idletime": "19 days 18 hours 14 minutes 37 seconds",
+    "uptime_seconds": 2540086,
+    "uptime": "29 days 09 hours 34 minutes 46 seconds",
+    "idletime_seconds": 2536094,
+    "idletime": "29 days 08 hours 28 minutes 14 seconds",
     "block_device": {
       "sda": {
         "size": "20971520",
@@ -901,7 +913,7 @@
         "ohai_root": "/opt/chef/embedded/lib/ruby/gems/1.9.1/gems/ohai-7.2.4/lib/ohai"
       }
     },
-    "ohai_time": 1412905527.4228654,
+    "ohai_time": 1413736048.687203,
     "command": {
       "ps": "ps -ef"
     },
@@ -1104,18 +1116,25 @@
           "gecos": ""
         },
         "achinsk": {
-          "dir": "/srv/www/achinsk",
+          "dir": "/srv/available/achinsk",
           "gid": 33,
           "uid": 1005,
           "shell": "/nonexistent",
           "gecos": ""
         },
         "krasnoyarsk": {
-          "dir": "/srv/www/krasnoyarsk",
+          "dir": "/srv/available/krasnoyarsk",
           "gid": 33,
           "uid": 1006,
           "shell": "/nonexistent",
           "gecos": ""
+        },
+        "sd-agent": {
+          "dir": "/usr/bin/sd-agent/",
+          "gid": 111,
+          "uid": 106,
+          "shell": "/bin/bash",
+          "gecos": "Server Density Agent User,,,"
         }
       },
       "group": {
@@ -1439,6 +1458,12 @@
           "gid": 1003,
           "members": [
             "www-data"
+          ]
+        },
+        "sd-agent": {
+          "gid": 111,
+          "members": [
+
           ]
         }
       }
