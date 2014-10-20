@@ -339,6 +339,7 @@ hostsSecret = Chef::EncryptedDataBagItem.load_secret("#{node[:dataBagSecretPath]
 data_bag('dwbru-hosts').each do |hostname|
   host = Chef::EncryptedDataBagItem.load('dwbru-hosts', hostname, hostsSecret)
   hostsdir = "/srv/available/"
+  workdir = "/srv/www/"
 
   mysqlPassRegenFile = "#{hostsdir}#{hostname}/MysqlPasswordRegen"
 
@@ -346,7 +347,7 @@ data_bag('dwbru-hosts').each do |hostname|
   directory "#{hostsdir}#{hostname}" do
     owner "root"
     group "www-data"
-    mode "00770"
+    mode "00750"
   end
 
   file mysqlPassRegenFile do
@@ -368,10 +369,24 @@ data_bag('dwbru-hosts').each do |hostname|
 
   user hostname do
     gid "www-data"
-    home "#{hostsdir}#{hostname}"
+    home "#{workdir}#{hostname}"
     shell "/nonexistent"
     password ""
     action [ :create, :lock ]
+  end
+
+  directory "#{hostsdir}#{hostname}/.ssh/" do
+    owner hostname
+    group "www-data"
+    mode "00700"
+    recursive true
+  end
+
+  file "#{hostsdir}#{hostname}/.ssh/authorized_keys" do
+    content host['ssh_keys'].join("\n")
+    owner hostname
+    group "www-data"
+    mode "0600"
   end
 
 #  execute "echo #{hostname}:#{randomString} | chpasswd -c SHA512" do
@@ -422,7 +437,7 @@ data_bag('dwbru-hosts').each do |hostname|
 
   onOffTranslate = { "on" => :create, "off" => :delete }
 
-  link "/srv/www/#{hostname}" do
+  link "#{workdir}#{hostname}" do
     to "#{hostsdir}#{hostname}"
     action onOffTranslate[ host['status'] ]
   end
