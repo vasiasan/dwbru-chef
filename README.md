@@ -42,18 +42,12 @@ sudo chef-client -N NEW-NODE-NAME
 
 Host add
 ===========
-
-Generate password
-```
-openssl passwd -1 "theplaintextpassword"  # $1$HASHOFPASSWORD
-```
-
 Creating a host in an encrypted data bag.
 ```
 sudo knife data bag create dwbru-hosts achinsk --secret-file ~/data_bag_secret.key
 {
   "id": "achinsk",
-  "password": "$1$HASHOFPASSWORD",
+  "ssh_keys": [ "PUBLIC KEYS FROM USER OF THIS HOST" ],
   "mysqlPass": "CLEANPASSWORD",
   "status": "on"
 }
