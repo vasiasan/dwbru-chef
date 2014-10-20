@@ -415,15 +415,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "4357308",
-              "packets": "7097",
+              "bytes": "4903775",
+              "packets": "7753",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "4357308",
-              "packets": "7097",
+              "bytes": "4903775",
+              "packets": "7753",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -433,16 +433,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "319652884",
-              "packets": "1537486",
+              "bytes": "341969781",
+              "packets": "1588732",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "420176796",
-              "packets": "1457111",
+              "bytes": "433156647",
+              "packets": "1504656",
               "errors": "0",
               "drop": "1",
               "overrun": "0"
@@ -564,13 +564,13 @@
     "filesystem": {
       "rootfs": {
         "kb_size": "10188088",
-        "kb_used": "1351456",
-        "kb_available": "8296064",
+        "kb_used": "1352172",
+        "kb_available": "8295348",
         "percent_used": "15%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "49237",
-        "inodes_available": "606123",
+        "inodes_used": "49266",
+        "inodes_available": "606094",
         "inodes_percent_used": "8%"
       },
       "udev": {
@@ -614,13 +614,13 @@
       },
       "/dev/disk/by-uuid/2795e34f-4e9b-46a9-9e39-e6cc0f1f1478": {
         "kb_size": "10188088",
-        "kb_used": "1351456",
-        "kb_available": "8296064",
+        "kb_used": "1352172",
+        "kb_available": "8295348",
         "percent_used": "15%",
         "mount": "/",
         "total_inodes": "655360",
-        "inodes_used": "49237",
-        "inodes_available": "606123",
+        "inodes_used": "49266",
+        "inodes_available": "606094",
         "inodes_percent_used": "8%",
         "fs_type": "ext4",
         "mount_options": [
@@ -676,31 +676,31 @@
         "free": "0kB"
       },
       "total": "3801272kB",
-      "free": "2994240kB",
-      "buffers": "157448kB",
-      "cached": "422176kB",
-      "active": "622084kB",
-      "inactive": "104396kB",
-      "dirty": "76kB",
+      "free": "2992364kB",
+      "buffers": "157532kB",
+      "cached": "422952kB",
+      "active": "635476kB",
+      "inactive": "91828kB",
+      "dirty": "84kB",
       "writeback": "0kB",
-      "anon_pages": "146856kB",
-      "mapped": "19840kB",
-      "slab": "46964kB",
-      "slab_reclaimable": "38924kB",
-      "slab_unreclaim": "8040kB",
-      "page_tables": "4840kB",
+      "anon_pages": "146824kB",
+      "mapped": "19916kB",
+      "slab": "47172kB",
+      "slab_reclaimable": "39116kB",
+      "slab_unreclaim": "8056kB",
+      "page_tables": "4812kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1900636kB",
-      "committed_as": "551660kB",
+      "committed_as": "551824kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "9492kB",
       "vmalloc_chunk": "34359702528kB"
     },
-    "uptime_seconds": 2540086,
-    "uptime": "29 days 09 hours 34 minutes 46 seconds",
-    "idletime_seconds": 2536094,
-    "idletime": "29 days 08 hours 28 minutes 14 seconds",
+    "uptime_seconds": 2603291,
+    "uptime": "30 days 03 hours 08 minutes 11 seconds",
+    "idletime_seconds": 2599180,
+    "idletime": "30 days 01 hours 59 minutes 40 seconds",
     "block_device": {
       "sda": {
         "size": "20971520",
@@ -913,7 +913,7 @@
         "ohai_root": "/opt/chef/embedded/lib/ruby/gems/1.9.1/gems/ohai-7.2.4/lib/ohai"
       }
     },
-    "ohai_time": 1413736048.687203,
+    "ohai_time": 1413799252.851169,
     "command": {
       "ps": "ps -ef"
     },
@@ -1116,14 +1116,14 @@
           "gecos": ""
         },
         "achinsk": {
-          "dir": "/srv/available/achinsk",
+          "dir": "/srv/www/achinsk",
           "gid": 33,
           "uid": 1005,
           "shell": "/nonexistent",
           "gecos": ""
         },
         "krasnoyarsk": {
-          "dir": "/srv/available/krasnoyarsk",
+          "dir": "/srv/www/krasnoyarsk",
           "gid": 33,
           "uid": 1006,
           "shell": "/nonexistent",

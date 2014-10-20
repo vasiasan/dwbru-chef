@@ -1,20 +1,20 @@
 {
   "id": "achinsk",
-  "password": {
-    "encrypted_data": "RDbYyxdRoH0Nrc+Zt67oWaLZyCI2ozRX9UJYOY0TqsBjWmKWXyBoFnMfaRiv\nq5qXN+p1Iz5VkZGjUAh5KovdD8rTdqXK1b8m2NYEIB2G2wD6gilnG9EiDIUt\ncEK5AlnDYHKV5ghGI5kW4pbVwJ3WidIdKNBEC/kc+uyhKcj++hQ=\n",
-    "iv": "AajcoOZsEtfM3O3y4j74Hw==\n",
+  "ssh_keys": {
+    "encrypted_data": "+hIQUCpkICm/pvqKIU/ZKaO7pU7L2FpMtq5qQRX6TvshluTMHHXiFdJ99deP\nT9zcYdCl8H6ex/vlihpJ4sbcG0U3jjiYB5rijHC6zxeATf3kycpVop965Eti\nASGhz2pKqfO7hKBJO6h9lUszM0hLr6wwsoQfBWoKf/JFYS2DKYX7I8S8gJNW\nmlh7sgl8C0g+IseCv4ev6U1BXQmFHe8vQPuZPe4LMRFlwZiQQPGvQnvm+/M1\nbLh4iqsjUOnaLqCnrtTG/bNeJDM/JizaBbQrs5I2WT5WvTmkj6rf+KfbTiAW\nbOmcBbAwOU1YyEqjLUtk6NQpI5hH3rACrLb/FEjFEemRsQR8pKKhfhpe67Eh\nrt9R9tGOv2QNJRyhnu+5xm5hvXOpJZgxl4xMFvDvpOf8CccfQnbqFZOSbHvE\nAWm5c+eziAfGDs3VLhGN+4BtZl10Jp8/fHrcRDVd69rOCfxPaepeZX2mPWAW\nEN/fRIqVbJ5bvyBCA/kVg61r6iuqxwvhysR3I2878spGVj20HTS1H1dMuNx0\nScKb+DId9vRordQ=\n",
+    "iv": "WufFeXarhZURSyeA4FcwUw==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "mysqlPass": {
-    "encrypted_data": "uibM7srdXyRXhsDqn9PxOE8/mBpuDEA+sMJidW/2yVc=\n",
-    "iv": "9LZkNWBR9OPyBcpaS9TvKw==\n",
+    "encrypted_data": "WLaq+S5lozFMbSzucH4wVF1J8zrpBsFVM6x64BDm+s8=\n",
+    "iv": "eqv4eMVVsJl5Ry91r9QG9A==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "status": {
-    "encrypted_data": "NNVMkhnNyXF/fJP+5SNfJ7J6K+tD8IyO07kF/X5OB2M=\n",
-    "iv": "ZLy5neXcftOBrgEZX78jiw==\n",
+    "encrypted_data": "ab5Kc1BUov8WNt0rtXWZxtgfhgBczdOGlAj/IyUnomU=\n",
+    "iv": "8LVr9Ic0mw7jRvHiFjt26w==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   }
