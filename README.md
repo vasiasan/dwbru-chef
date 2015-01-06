@@ -5,7 +5,6 @@ Install additional software
 ```bash
 sudo apt-get update
 sudo apt-get install ruby git
-sudo gem install hub
 ```
 
 Install cheff
