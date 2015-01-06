@@ -48,13 +48,13 @@ sudo cp ./additional/configFiles/client.rb /etc/chef/
 
 Configure node
 ```bash
-sudo cp ./nodes/node-template.json ./nodes/NEW-NODE-NAME.json
-sudo knife node edit NEW-NODE-NAME
+sudo cp ./nodes/node-template.json ./nodes/$HOSTNAME.json
+sudo knife node edit $HOSTNAME
 ```
 
 Run
 ```bash
-sudo chef-client -N NEW-NODE-NAME
+sudo chef-client -N $HOSTNAME
 ```
 
 Host add
