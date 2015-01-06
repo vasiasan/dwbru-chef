@@ -1,21 +1,39 @@
 First steps
 ===========
 
-Install additional software
+Install essential  software
 ```bash
 sudo apt-get update
-sudo apt-get install ruby git
+sudo apt-get --no-install-recommends install ruby git
 ```
 
-Install cheff
+Install chef
 ```bash
 sudo curl -L https://www.getchef.com/chef/install.sh | sudo bash
 ```
 
+Generate new deployment key for new box
+```bash
+sudo ssh-keygen -t ecdsa -C "$HOSTNAME-chef-repo-deploy-key" -f /root/.ssh/id_rsa-chef-repo
+sudo ssh-keygen -y -f /root/.ssh/id_rsa-chef-repo
+```
+
+Add result public key to https://github.com/dwbru/chef-repo/settings/keys
+
+Configure git over ssh at 443 to github
+```bash
+cat << EOF > /root/.ssh/config
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  User git
+  IdentityFile /root/.ssh/id_rsa-chef-repo
+EOF
+```
 Get dwbru chef-repository
 ```bash
 cd /var/
-sudo git clone https://github.com/dwbru/chef-repo
+sudo git clone git@github.com:dwbru/chef-repo.git
 cd /var/chef-repo
 ```
 
