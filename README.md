@@ -57,6 +57,13 @@ Run
 sudo chef-client -N $HOSTNAME
 ```
 
+Secret key add
+===========
+***Dangerous, you can destroy the existing key. Remove "!" symbol from the name of the key.***
+```
+sudo openssl rand -base64 512 | tr -d '\r\n' > ~/data_bag_secret!.key
+```
+
 Host add
 ===========
 Creating a host in an encrypted data bag.
