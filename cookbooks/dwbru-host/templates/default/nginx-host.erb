@@ -10,7 +10,7 @@ server {
         root /srv/www/<%= @hostname %>/htdocs;
         index index.php index.html index.htm;
 
-        server_name achinsk.your-domain.ru;
+        server_name <%= @hostname %>.your-domain.ru;
 
         location / {
                 try_files $uri $uri/ /index.php?$args;
